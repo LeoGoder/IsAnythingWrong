@@ -24,6 +24,7 @@ func next_camera():
 			cam.position = cam_list_position[cam_index]
 		else:
 			cam.position = cam_list_position[cam_index]
+
 func enable_diable_settings():
 	if Input.is_action_just_pressed("pause"):
 		if pause.visible == true:

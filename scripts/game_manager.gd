@@ -8,8 +8,8 @@ var salon_item_position = []
 var salon_player_item_position
 @onready var time = $"../CanvasLayer/Label"
 @onready var timer = $"../Timer"
-@onready var salon = get_node("/root/map/salon")
-
+#@onready var salon = get_node("/root/map/salon")
+@export var salon: Sprite2D
 
 func _on_timer_timeout() -> void:
 	minute_unit = minute_unit + 1
@@ -21,13 +21,12 @@ func _on_timer_timeout() -> void:
 		minute_ten = 0
 	if hour_unit >= 6:
 		get_tree().change_scene_to_file("res://scene/VictoryScreen.tscn")
-	print("le timer est la ")
 	display_time()
 	
 func create_anomalies():
 	pass
 func _on_spawn_anomalie_timeout() -> void:
-	create_anomalies() # Replace with function body.
+	create_anomalies()
 
 func display_time():
 	time.text = str(hour_ten) + str(hour_unit) + " : " + str(minute_ten) + str(minute_unit)
@@ -36,7 +35,10 @@ func object_based_list():
 	if salon:
 		for child in salon.get_children():
 			salon_item_position.append(child.position)
+	print(salon_item_position[0])
 
+func _on_menu_button_about_to_popup() -> void:
+	pass # Replace with function body.
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
