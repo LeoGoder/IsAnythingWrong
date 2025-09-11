@@ -62,5 +62,7 @@ autostart = true
 visible = false
 
 [node name="Spawn_anomalie" type="Timer" parent="."]
+wait_time = 3.0
 
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawn_anomalie" to="GameManager" method="_on_spawn_anomalie_timeout"]

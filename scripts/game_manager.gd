@@ -21,7 +21,13 @@ func _on_timer_timeout() -> void:
 		minute_ten = 0
 	if hour_unit >= 6:
 		get_tree().change_scene_to_file("res://scene/VictoryScreen.tscn")
+	print("le timer est la ")
 	display_time()
+	
+func create_anomalies():
+	pass
+func _on_spawn_anomalie_timeout() -> void:
+	create_anomalies() # Replace with function body.
 
 func display_time():
 	time.text = str(hour_ten) + str(hour_unit) + " : " + str(minute_ten) + str(minute_unit)
@@ -31,8 +37,7 @@ func object_based_list():
 		for child in salon.get_children():
 			salon_item_position.append(child.position)
 
-func player_erease_anomalies():
-	pass
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	display_time()

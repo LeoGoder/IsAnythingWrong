@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1qsr44y84h27"]
+[gd_scene load_steps=5 format=3 uid="uid://c1qsr44y84h27"]
 
 [ext_resource type="Script" uid="uid://c3p6xtyhl6qe3" path="res://scene/pause_menu.gd" id="1_grdc7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grdc7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_me6vf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq4tv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Root" type="CanvasLayer"]
 script = ExtResource("1_grdc7")
@@ -29,15 +38,23 @@ grow_vertical = 2
 
 [node name="Resume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_grdc7")
 text = "Resume"
+flat = true
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_me6vf")
 text = "Settings"
+flat = true
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_cq4tv")
 text = "Quit"
+flat = true
 
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
