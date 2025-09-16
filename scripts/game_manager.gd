@@ -37,7 +37,9 @@ func object_based_list():
 			salon_item_position.append(child.position)
 	print(salon_item_position[0])
 
-func _on_menu_button_about_to_popup() -> void:
+
+# will check for anomalies in the salon
+func _on_salon_pressed() -> void:
 	pass # Replace with function body.
 
 # Called when the node enters the scene tree for the first time.

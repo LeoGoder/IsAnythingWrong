@@ -1,11 +1,36 @@
-[gd_scene format=3 uid="uid://c4818b7dbg5ye"]
+[gd_scene load_steps=3 format=3 uid="uid://c4818b7dbg5ye"]
 
-[node name="main_menu" type="Control"]
+[ext_resource type="Texture2D" uid="uid://bkyqe8hvwqmqf" path="res://assets/maps/salon.svg" id="1_3er1b"]
+[ext_resource type="Script" uid="uid://dgrbhl8rekbnc" path="res://scripts/main_menu.gd" id="1_hxu56"]
+
+[node name="main_menu" type="Control" node_paths=PackedStringArray("camera")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hxu56")
+camera = NodePath("Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.0
+offset_top = -243.0
+offset_right = 370.0
+offset_bottom = 243.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.299547, 0.299547, 0.299547, 0.568627)
+
+[node name="Salon" type="Sprite2D" parent="."]
+position = Vector2(6, -12)
+texture = ExtResource("1_3er1b")

@@ -11,6 +11,7 @@
 [node name="map" type="Node2D"]
 
 [node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("salon")]
+visible = false
 script = ExtResource("4_nf54y")
 salon = NodePath("../salon")
 
@@ -75,14 +76,16 @@ text = "Salon"
 wait_time = 3.0
 autostart = true
 
-[node name="Root" parent="." instance=ExtResource("5_4xw1d")]
+[node name="Root" parent="." node_paths=PackedStringArray("time", "player_script") instance=ExtResource("5_4xw1d")]
 visible = false
+time = NodePath("../Timer")
+player_script = NodePath("../Player")
 
 [node name="Spawn_anomalie" type="Timer" parent="."]
 wait_time = 3.0
 
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
 [connection signal="button_down" from="CanvasLayer/Button/Salon" to="CanvasLayer/Button" method="_on_salon_button_down"]
-[connection signal="pressed" from="CanvasLayer/Button/Salon" to="CanvasLayer/Button" method="_on_salon_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button/Salon" to="GameManager" method="_on_salon_pressed"]
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="Spawn_anomalie" to="GameManager" method="_on_spawn_anomalie_timeout"]

@@ -1,12 +1,12 @@
-extends Button
+extends Control
 
-@export var salon: Button
+var speed = 0.1
+@export var camera: Camera2D
 
-func _on_pressed() -> void:
-	if salon.visible == false:
-		salon.visible = true
-	elif salon.visible == true:
-		salon.visible = false
+func move_camera_with_mouse():
+	var mouse_position = get_global_mouse_position()
+	camera.position = mouse_position * speed
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,4 +15,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	move_camera_with_mouse()
