@@ -1,30 +1,84 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdfxwobmc2ra3"]
+[gd_scene load_steps=16 format=3 uid="uid://cdfxwobmc2ra3"]
 
 [ext_resource type="Texture2D" uid="uid://bkyqe8hvwqmqf" path="res://assets/maps/salon.svg" id="1_rgtto"]
 [ext_resource type="PackedScene" uid="uid://draxvr2x27q23" path="res://scene/player.tscn" id="2_wpp1k"]
 [ext_resource type="Texture2D" uid="uid://854y5ni7vieu" path="res://assets/props/table.svg" id="3_h0nt1"]
-[ext_resource type="Texture2D" uid="uid://bsn440qbi8n7n" path="res://icon.svg" id="4_bq37x"]
+[ext_resource type="Texture2D" uid="uid://dqfn5ki7r20qv" path="res://assets/props/screen.svg" id="4_0bc6k"]
 [ext_resource type="Script" uid="uid://dirukoc38j2nc" path="res://scripts/game_manager.gd" id="4_nf54y"]
 [ext_resource type="PackedScene" uid="uid://c1qsr44y84h27" path="res://scene/pause_menu.tscn" id="5_4xw1d"]
+[ext_resource type="Texture2D" uid="uid://do2qgfo8aybg4" path="res://assets/props/mousepad.svg" id="5_8vfk2"]
 [ext_resource type="Script" uid="uid://c6fktidibs41x" path="res://scene/popup_button.gd" id="6_jp76l"]
+[ext_resource type="Texture2D" uid="uid://8ygoa2sqxge7" path="res://assets/props/keyboard.svg" id="6_v66k7"]
+[ext_resource type="Texture2D" uid="uid://bxv448eg8fnt6" path="res://assets/props/mouse.svg" id="7_44fbv"]
+[ext_resource type="Texture2D" uid="uid://b815jc2kps6yt" path="res://assets/props/carpet.svg" id="8_8vfk2"]
+[ext_resource type="Texture2D" uid="uid://bim8m3b1111wf" path="res://assets/props/books.svg" id="9_v66k7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44fbv"]
+atlas = ExtResource("9_v66k7")
+region = Rect2(0, 0, 238, 211)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8r8p"]
+atlas = ExtResource("9_v66k7")
+region = Rect2(238, 0, 238, 211)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gmpll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44fbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8r8p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="map" type="Node2D"]
 
-[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("salon")]
+[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("salon", "checking", "check_text", "books")]
 visible = false
 script = ExtResource("4_nf54y")
 salon = NodePath("../salon")
+checking = NodePath("../Checking")
+check_text = NodePath("../CanvasLayer/Checking")
+books = NodePath("../salon/Books")
 
 [node name="salon" type="Sprite2D" parent="."]
 texture = ExtResource("1_rgtto")
 
 [node name="table" type="Sprite2D" parent="salon"]
-position = Vector2(-429, -210)
+position = Vector2(-429, -178)
 texture = ExtResource("3_h0nt1")
 
-[node name="Godot" type="Sprite2D" parent="salon"]
-position = Vector2(109, -241)
-texture = ExtResource("4_bq37x")
+[node name="Screen" type="Sprite2D" parent="salon"]
+position = Vector2(-432, -359)
+texture = ExtResource("4_0bc6k")
+
+[node name="Mousepad" type="Sprite2D" parent="salon"]
+position = Vector2(-436, -225)
+texture = ExtResource("5_8vfk2")
+
+[node name="Keyboard" type="Sprite2D" parent="salon"]
+texture_filter = 1
+position = Vector2(-449, -221)
+texture = ExtResource("6_v66k7")
+
+[node name="Mouse" type="Sprite2D" parent="salon"]
+position = Vector2(-380, -220)
+texture = ExtResource("7_44fbv")
+
+[node name="Carpet" type="Sprite2D" parent="salon"]
+position = Vector2(646, -365)
+scale = Vector2(0.822663, 0.998584)
+texture = ExtResource("8_8vfk2")
+offset = Vector2(-387.461, 173.496)
+
+[node name="Books" type="AnimatedSprite2D" parent="salon"]
+position = Vector2(-575, 294)
+scale = Vector2(0.28673, 0.28673)
+sprite_frames = SubResource("SpriteFrames_gmpll")
 
 [node name="Cuisine" type="Sprite2D" parent="."]
 
@@ -72,6 +126,18 @@ offset_bottom = 85.0
 grow_horizontal = 0
 text = "Salon"
 
+[node name="Checking" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -83.5
+offset_right = 83.5
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Checking..."
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
@@ -82,6 +148,10 @@ time = NodePath("../Timer")
 player_script = NodePath("../Player")
 
 [node name="Spawn_anomalie" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Checking" type="Timer" parent="."]
 wait_time = 3.0
 
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
@@ -89,3 +159,4 @@ wait_time = 3.0
 [connection signal="pressed" from="CanvasLayer/Button/Salon" to="GameManager" method="_on_salon_pressed"]
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="Spawn_anomalie" to="GameManager" method="_on_spawn_anomalie_timeout"]
+[connection signal="timeout" from="Checking" to="GameManager" method="_on_checking_timeout"]

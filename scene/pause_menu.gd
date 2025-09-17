@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var quit = $VBoxContainer/Quit
 @export var time: Timer
 @export var player_script: Node2D
+var _player = player.new()
 
 
 func _on_quit_pressed() -> void:

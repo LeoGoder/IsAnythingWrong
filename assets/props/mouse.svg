@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3.7214663mm"
+   height="5.4976945mm"
+   viewBox="0 0 3.7214663 5.4976945"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="assets.svg"
+   inkscape:version="1.4.2 (ebf0e94, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.73071672"
+     inkscape:cx="1153.6618"
+     inkscape:cy="708.89304"
+     inkscape:window-width="3440"
+     inkscape:window-height="1371"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="3.7214663"
+       height="5.4976945"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="salon"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-63.516599,-487.99217)">
+    <rect
+       style="fill:#404040;fill-opacity:1;stroke:#737373;stroke-width:0.265;stroke-dasharray:none;stroke-opacity:1"
+       id="rect20"
+       width="3.4564669"
+       height="5.2327085"
+       x="63.649097"
+       y="488.12463"
+       ry="1.20713"
+       inkscape:export-filename="mouse.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#404040;fill-opacity:1;stroke:#737373;stroke-width:0.270699;stroke-dasharray:none;stroke-opacity:1"
+       d="m 65.402041,488.24094 v 1.62939"
+       id="path20" />
+  </g>
+</svg>

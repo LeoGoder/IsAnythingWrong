@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name player
+
 var cam_list_position = [Vector2(0, 0), Vector2(100, 20)]
 var cam_index = 0
 var can_move = true
