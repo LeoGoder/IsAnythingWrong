@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4818b7dbg5ye"]
+[gd_scene load_steps=4 format=3 uid="uid://c4818b7dbg5ye"]
 
 [ext_resource type="Texture2D" uid="uid://bkyqe8hvwqmqf" path="res://assets/maps/salon.svg" id="1_3er1b"]
 [ext_resource type="Script" uid="uid://dgrbhl8rekbnc" path="res://scripts/main_menu.gd" id="1_hxu56"]
+[ext_resource type="AudioStream" uid="uid://bfe4mj0lvow0y" path="res://assets/sfx/434976__lost_dream__horror-game-menu.wav" id="2_2fwvj"]
 
 [node name="main_menu" type="Control" node_paths=PackedStringArray("camera")]
 layout_mode = 3
@@ -67,6 +68,10 @@ text = "Settings"
 [node name="quit" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("2_2fwvj")
+autoplay = true
 
 [node name="Salon" type="Sprite2D" parent="."]
 position = Vector2(6, -12)

@@ -47,6 +47,10 @@ func create_anomalies():
 		if item_manipulate.position == item_compare.position:
 			item_manipulate.position.x += 50
 			number_anomalies += 1
+	if item_manipulate.name == "MakeYouSmile":
+		if item_manipulate.visible == false:
+			item_manipulate.visible = true
+			number_anomalies += 1
 
 func _on_spawn_anomalie_timeout() -> void:
 	create_anomalies()
@@ -62,6 +66,13 @@ func _on_checking_timeout() -> void:
 	if salon_item_manipulate[index_of_anomalies].name == "Books" || salon_item_manipulate[index_of_anomalies].name == "Mouse":
 		salon_item_manipulate[index_of_anomalies].position = salon_based_item[index_of_anomalies].position
 		number_anomalies -= 1
+	if salon_item_manipulate[index_of_anomalies].name == "Carpet":
+		salon_item_manipulate[index_of_anomalies].position = salon_based_item[index_of_anomalies].position
+		salon_item_manipulate[index_of_anomalies].rotation = salon_based_item[index_of_anomalies].rotation
+		number_anomalies -= 1
+	if salon_item_manipulate[index_of_anomalies].name == "MakeYouSmile":
+		salon_item_manipulate[index_of_anomalies].visible = false
+		number_anomalies -= 1
 	
 	check_text.visible = false
 
@@ -69,6 +80,11 @@ func _on_checking_timeout() -> void:
 func _on_salon_pressed() -> void:
 	for i in range(salon.get_child_count()):
 		if salon_item_manipulate[i].position != salon_based_item[i].position:
+			checking.start()
+			check_text.visible = true
+			index_of_anomalies = i
+		elif salon_item_manipulate[i].name == "MakeYouSmile" && salon_item_manipulate[i].visible == true:
+			print("je souris")
 			checking.start()
 			check_text.visible = true
 			index_of_anomalies = i

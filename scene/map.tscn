@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cdfxwobmc2ra3"]
+[gd_scene load_steps=18 format=3 uid="uid://cdfxwobmc2ra3"]
 
 [ext_resource type="Texture2D" uid="uid://bkyqe8hvwqmqf" path="res://assets/maps/salon.svg" id="1_rgtto"]
 [ext_resource type="PackedScene" uid="uid://draxvr2x27q23" path="res://scene/player.tscn" id="2_wpp1k"]
@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://8ygoa2sqxge7" path="res://assets/props/keyboard.svg" id="6_v66k7"]
 [ext_resource type="Texture2D" uid="uid://bxv448eg8fnt6" path="res://assets/props/mouse.svg" id="7_44fbv"]
 [ext_resource type="Texture2D" uid="uid://b815jc2kps6yt" path="res://assets/props/carpet.svg" id="8_8vfk2"]
+[ext_resource type="Texture2D" uid="uid://cv5ufqja70j4t" path="res://assets/character/make_you_smile.png" id="9_44fbv"]
 [ext_resource type="Texture2D" uid="uid://bim8m3b1111wf" path="res://assets/props/books.svg" id="9_v66k7"]
+[ext_resource type="AudioStream" uid="uid://dlcuiuk5qhn1w" path="res://assets/sfx/762652__beckmen__vhs-c-camera-noise.wav" id="13_l8r8p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44fbv"]
 atlas = ExtResource("9_v66k7")
@@ -36,6 +38,7 @@ animations = [{
 }]
 
 [node name="map" type="Node2D"]
+position = Vector2(-1, 1)
 
 [node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("salon", "checking", "check_text", "books")]
 visible = false
@@ -74,6 +77,13 @@ position = Vector2(646, -365)
 scale = Vector2(0.822663, 0.998584)
 texture = ExtResource("8_8vfk2")
 offset = Vector2(-387.461, 173.496)
+
+[node name="MakeYouSmile" type="Sprite2D" parent="salon"]
+visible = false
+texture_filter = 1
+position = Vector2(-50.4497, 230.375)
+scale = Vector2(0.14196, 0.14196)
+texture = ExtResource("9_44fbv")
 
 [node name="Books" type="AnimatedSprite2D" parent="salon"]
 position = Vector2(-575, 294)
@@ -137,6 +147,10 @@ offset_bottom = 45.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
 text = "Checking..."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("13_l8r8p")
+autoplay = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
