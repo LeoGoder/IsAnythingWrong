@@ -19,6 +19,7 @@ camera = NodePath("Camera2D")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -30,7 +31,7 @@ offset_right = 370.0
 offset_bottom = 243.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.299547, 0.299547, 0.299547, 0.568627)
+color = Color(0.140447, 0.140447, 0.140447, 0.843137)
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = 5

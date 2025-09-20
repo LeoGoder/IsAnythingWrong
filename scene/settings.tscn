@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://3vlpvlnle3mg"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.398958
+anchor_top = 0.326852
+anchor_right = 0.725519
+anchor_bottom = 0.649221
+offset_left = -124.0
+offset_top = -32.0
+offset_right = -710.996
+offset_bottom = -340.159
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(15.6749, 8.70398)
+size_flags_horizontal = 4
+color = Color(0.169245, 0.169245, 0.169245, 1)

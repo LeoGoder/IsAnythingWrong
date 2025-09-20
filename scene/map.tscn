@@ -38,7 +38,7 @@ animations = [{
 }]
 
 [node name="map" type="Node2D"]
-position = Vector2(-1, 1)
+position = Vector2(12, -1)
 
 [node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("salon", "checking", "check_text", "books")]
 visible = false
@@ -73,7 +73,7 @@ position = Vector2(-380, -220)
 texture = ExtResource("7_44fbv")
 
 [node name="Carpet" type="Sprite2D" parent="salon"]
-position = Vector2(646, -365)
+position = Vector2(646, -246)
 scale = Vector2(0.822663, 0.998584)
 texture = ExtResource("8_8vfk2")
 offset = Vector2(-387.461, 173.496)
@@ -162,7 +162,7 @@ time = NodePath("../Timer")
 player_script = NodePath("../Player")
 
 [node name="Spawn_anomalie" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 15.0
 autostart = true
 
 [node name="Checking" type="Timer" parent="."]
