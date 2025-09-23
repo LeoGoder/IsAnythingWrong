@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="135.82634mm"
+   height="110.75649mm"
+   viewBox="0 0 135.82634 110.75649"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="assets.svg"
+   inkscape:version="1.4.2 (ebf0e94, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="6041.5204"
+     inkscape:cy="250.3158"
+     inkscape:window-width="3440"
+     inkscape:window-height="1371"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="135.82634"
+       height="110.75649"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="salon"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1654.9863,-131.00958)">
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.265"
+       id="rect13"
+       width="135.82637"
+       height="110.75649"
+       x="1654.9865"
+       y="131.00958"
+       inkscape:label="logo_background"
+       inkscape:export-filename="/home/azazel/godot_proj/anomalies/assets/logo/game_logo.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#ebebeb;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6-2"
+       width="101.38448"
+       height="34.760391"
+       x="126.35196"
+       y="-1756.3732"
+       inkscape:export-filename="/home/azazel/godot_proj/anomalies/assets/props/table.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:label="table_logo"
+       transform="rotate(90.34508)" />
+    <rect
+       style="fill:#c6c6c6;fill-opacity:1;stroke:none;stroke-width:1.00359;stroke-dasharray:none;stroke-opacity:1"
+       id="rect7-7"
+       width="101.38449"
+       height="6.5175872"
+       x="126.35196"
+       y="-1721.6128"
+       transform="rotate(90.34508)" />
+    <rect
+       style="fill:#c6c6c6;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-0"
+       width="8.5090542"
+       height="29.872211"
+       x="141.5596"
+       y="-1715.0952"
+       transform="rotate(90.34508)" />
+    <rect
+       style="fill:#c6c6c6;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-9-9"
+       width="8.5090542"
+       height="29.872211"
+       x="204.12244"
+       y="-1715.0952"
+       transform="rotate(90.34508)" />
+    <rect
+       style="fill:#adadad;fill-opacity:1;stroke:none;stroke-width:0.707106;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9-3"
+       width="8.5090542"
+       height="3.0777211"
+       x="141.5596"
+       y="-1715.0952"
+       transform="rotate(90.34508)" />
+    <rect
+       style="fill:#adadad;fill-opacity:1;stroke:none;stroke-width:0.66421;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9-1-6"
+       width="8.5090542"
+       height="2.7156336"
+       x="204.12244"
+       y="-1715.0952"
+       transform="rotate(90.34508)" />
+    <circle
+       style="fill:#000000;fill-opacity:0.654676;stroke:none;stroke-width:0.046301;stroke-opacity:1"
+       id="path1-1"
+       cx="169.61392"
+       cy="-1745.606"
+       r="7.4769449"
+       inkscape:export-filename="/home/azazel/godot_proj/anomalies/assets/character/make_you_smile.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="rotate(90.152049)" />
+    <circle
+       style="fill:#000000;fill-opacity:0.654676;stroke:none;stroke-width:0.046301;stroke-opacity:1"
+       id="path1-3-8"
+       cx="192.99519"
+       cy="-1745.606"
+       r="7.4769449"
+       inkscape:export-filename="/home/azazel/godot_proj/anomalies/assets/character/make_you_smile.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="rotate(90.152049)" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.921359;stroke-dasharray:none;stroke-opacity:0.65"
+       d="m 1728.2949,174.20106 c 0,0 -6.4917,10.75473 -0.062,23.38125"
+       id="path2-7" />
+  </g>
+</svg>

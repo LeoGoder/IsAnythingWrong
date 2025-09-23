@@ -13,7 +13,7 @@ config_version=5
 config/name="anomalies"
 run/main_scene="uid://c4818b7dbg5ye"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://di8v2rj3hlkut"
 
 [display]
 

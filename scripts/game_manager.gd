@@ -9,10 +9,12 @@ var salon_item_manipulate = []
 var salon_player_item_position
 var number_anomalies = 0
 var index_of_anomalies = 0
+var anomalies_can_spawn = true
 @onready var time = $"../CanvasLayer/Label"
 @onready var timer = $"../Timer"
 #@onready var salon = get_node("/root/map/salon")
 @export var salon: Sprite2D
+@export var report_button: Button
 @export var checking: Timer
 @export var check_text: Label
 @export var books: AnimatedSprite2D
@@ -53,7 +55,8 @@ func create_anomalies():
 			number_anomalies += 1
 
 func _on_spawn_anomalie_timeout() -> void:
-	create_anomalies()
+	if anomalies_can_spawn == true:
+		create_anomalies()
 
 func object_based_list():
 	if salon:
@@ -83,11 +86,17 @@ func _on_salon_pressed() -> void:
 			checking.start()
 			check_text.visible = true
 			index_of_anomalies = i
+			report_button.disabled == true
+			report_button.visible == false
 		elif salon_item_manipulate[i].name == "MakeYouSmile" && salon_item_manipulate[i].visible == true:
 			print("je souris")
 			checking.start()
 			check_text.visible = true
 			index_of_anomalies = i
+			report_button.disabled == true
+			report_button.visible == false
+		else:
+			pass
 
 func is_there_too_anomalies():
 	if number_anomalies == 4:

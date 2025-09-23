@@ -2,7 +2,7 @@ extends Node2D
 
 class_name player
 
-var cam_list_position = [Vector2(0, 0), Vector2(100, 20)]
+var cam_list_position = [Vector2(0, 0), Vector2(-39, -2178), Vector2(3885.0, -43.0)]
 var cam_index = 0
 var can_move = true
 @onready var cam = $Camera2D
@@ -10,11 +10,12 @@ var can_move = true
 @onready var console = get_node("/root/map/Root/Console_Window")
 @onready var game_timer = get_node("/root/map/Timer")
 @onready var spawn_timer = get_node("/root/map/Spawn_anomalie")
+@export var gamemanager_script: Node2D
 
 func next_camera():
 	if Input.is_action_just_pressed("next") and can_move == true:
 		cam_index += 1
-		if cam_index >= 2: 
+		if cam_index >= 3: 
 			cam_index = 0
 			cam.position = cam_list_position[cam_index]
 		else:
@@ -22,7 +23,7 @@ func next_camera():
 	if Input.is_action_just_pressed("previous") and can_move == true:
 		cam_index -= 1
 		if cam_index < 0: 
-			cam_index = 1
+			cam_index = 2
 			cam.position = cam_list_position[cam_index]
 		else:
 			cam.position = cam_list_position[cam_index]
@@ -32,10 +33,12 @@ func enable_diable_settings():
 		if pause.visible == true:
 			pause.visible = false
 			game_timer.paused = false
+			gamemanager_script.anomalies_can_spawn = true
 			can_move = true
 		elif pause.visible == false:
 			pause.visible = true
 			game_timer.paused = true
+			gamemanager_script.anomalies_can_spawn = false
 			can_move = false
 
 func enable_disable_console():
