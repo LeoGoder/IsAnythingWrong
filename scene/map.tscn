@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cdfxwobmc2ra3"]
+[gd_scene load_steps=32 format=3 uid="uid://cdfxwobmc2ra3"]
 
 [ext_resource type="Texture2D" uid="uid://bkyqe8hvwqmqf" path="res://assets/maps/salon.svg" id="1_rgtto"]
 [ext_resource type="PackedScene" uid="uid://draxvr2x27q23" path="res://scene/player.tscn" id="2_wpp1k"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://yugoo3gt1png" path="res://assets/props/oven.svg" id="14_amuei"]
 [ext_resource type="Texture2D" uid="uid://b5a6idbmy1owx" path="res://assets/props/bad_coffee.svg" id="14_yqoch"]
 [ext_resource type="Texture2D" uid="uid://u1f0y4smdmxx" path="res://assets/props/eau_lavabo.svg" id="22_pa0f6"]
+[ext_resource type="Texture2D" uid="uid://tgo1awswf7st" path="res://assets/props/poubelle.svg" id="23_lfekj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44fbv"]
 atlas = ExtResource("9_v66k7")
@@ -65,7 +66,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [node name="map" type="Node2D"]
 position = Vector2(12, -1)
 
-[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("salon", "cuisine", "couloir", "report_button", "checking", "check_text", "books", "popup_report")]
+[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("salon", "cuisine", "couloir", "report_button", "checking", "check_text", "books", "popup_report", "poubelle", "the_player")]
 visible = false
 script = ExtResource("4_nf54y")
 salon = NodePath("../salon")
@@ -76,6 +77,8 @@ checking = NodePath("../Checking")
 check_text = NodePath("../CanvasLayer/Checking")
 books = NodePath("../salon/Books")
 popup_report = NodePath("../CanvasLayer/Button/Control")
+poubelle = NodePath("../Cuisine/Poubelle")
+the_player = NodePath("../Player")
 
 [node name="salon" type="Sprite2D" parent="."]
 texture = ExtResource("1_rgtto")
@@ -162,6 +165,11 @@ color = Color(0.68, 0.351333, 0, 1)
 energy = 11.35
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_yqoch")
+
+[node name="Poubelle" type="Sprite2D" parent="Cuisine"]
+position = Vector2(487.11, 479.499)
+scale = Vector2(0.131086, 0.131086)
+texture = ExtResource("23_lfekj")
 
 [node name="couloir" type="Sprite2D" parent="."]
 position = Vector2(3885, -43)

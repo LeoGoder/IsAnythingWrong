@@ -10,12 +10,11 @@ var couloir_based_item = []
 var salon_item_manipulate = []
 var cuisine_item_manipulate = []
 var couloir_item_manipulate = []
-var number_anomalies = 3
+var number_anomalies = 0
 var index_of_anomalies = 0
 var anomalies_can_spawn = true
 @onready var time = $"../CanvasLayer/Label"
 @onready var timer = $"../Timer"
-#@onready var salon = get_node("/root/map/salon")
 @export var salon: Sprite2D
 @export var cuisine: Sprite2D
 @export var couloir: Sprite2D
@@ -24,6 +23,10 @@ var anomalies_can_spawn = true
 @export var check_text: Label
 @export var books: AnimatedSprite2D
 @export var popup_report: Control
+@export var poubelle: Sprite2D
+var poubelle_rotation = deg_to_rad(0)
+@export var the_player: Node2D
+@onready var block_view = the_player.get_node("Camera2D/CanvasLayer/Block_view")
 
 func _on_timer_timeout() -> void:
 	minute_unit = minute_unit + 1
@@ -72,10 +75,14 @@ func anomalies_on_cuisine():
 	if item_manipulate.name == "BadCoffee" && item_manipulate.visible == true:
 		item_manipulate.visible = false
 		number_anomalies += 1
+	if item_manipulate.name == "Poubelle" && poubelle_rotation == 0:
+		poubelle_rotation = deg_to_rad(2)
+		number_anomalies += 1
+	
 
 func create_anomalies():
 	var rng = RandomNumberGenerator.new()
-	var random_number = rng.randi_range(0, 2)
+	var random_number = 1 #rng.randi_range(0, 2)
 	if random_number == 0:
 		anomalies_on_salon()
 	if random_number == 1:
@@ -101,39 +108,52 @@ func object_based_list():
 			couloir_based_item.append(child.duplicate())
 			couloir_item_manipulate.append(child)
 
-
 func _on_checking_timeout() -> void:
-	if salon_item_manipulate[index_of_anomalies].name == "Books" || salon_item_manipulate[index_of_anomalies].name == "Mouse":
-		salon_item_manipulate[index_of_anomalies].position = salon_based_item[index_of_anomalies].position
-		number_anomalies -= 1
-	if salon_item_manipulate[index_of_anomalies].name == "Carpet":
-		salon_item_manipulate[index_of_anomalies].position = salon_based_item[index_of_anomalies].position
-		salon_item_manipulate[index_of_anomalies].rotation = salon_based_item[index_of_anomalies].rotation
-		number_anomalies -= 1
-	if salon_item_manipulate[index_of_anomalies].name == "MakeYouSmile":
-		salon_item_manipulate[index_of_anomalies].visible = false
-		number_anomalies -= 1
-	
 	report_button.disabled = false
 	check_text.visible = false
+	block_view.visible = false
 
 # will check for anomalies in the salon
 func _on_salon_pressed() -> void:
 	for i in range(salon.get_child_count()):
 		if salon_item_manipulate[i].position != salon_based_item[i].position:
-			index_of_anomalies = i
+			salon_item_manipulate[i].position = salon_based_item[i].position
+			salon_item_manipulate[i].rotation = salon_based_item[i].rotation
+			number_anomalies -= 1
+			break
 		elif salon_item_manipulate[i].name == "MakeYouSmile" && salon_item_manipulate[i].visible == true:
-			index_of_anomalies = i
+			salon_item_manipulate[i].visible = false
+			number_anomalies -= 1
+			break
 			
 		else:
 			pass
+	block_view.visible = true
 	checking.start()
 	check_text.visible = true
 	report_button.disabled = true
 	popup_report.visible = false
 
 func _on_cuisne_pressed() -> void:
-	pass # Replace with function body.
+	for i in range(cuisine.get_child_count()):
+		if (cuisine_item_manipulate[i].name == "Light_oven" || cuisine_item_manipulate[i].name == "EauLavabo") && cuisine_item_manipulate[i].visible == true:
+			cuisine_item_manipulate[i].visible = false
+			number_anomalies -= 1
+			break
+		elif cuisine_item_manipulate[i].name == "BadCoffee" && cuisine_item_manipulate[i].visible == false:
+			cuisine_item_manipulate[i].visible = true
+			number_anomalies -= 1
+			break
+		elif cuisine_item_manipulate[i].name == "Poubelle" && poubelle_rotation != 0:
+			poubelle_rotation = deg_to_rad(0)
+			cuisine_item_manipulate[i].rotation = deg_to_rad(0)
+			number_anomalies -= 1
+			break
+	block_view.visible = true
+	checking.start()
+	check_text.visible = true
+	report_button.disabled = true
+	popup_report.visible = false
 
 func is_there_too_anomalies():
 	if number_anomalies == 4:
@@ -152,3 +172,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	is_there_too_anomalies()
+	poubelle.rotation += poubelle_rotation
