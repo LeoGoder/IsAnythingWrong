@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cdfxwobmc2ra3"]
+[gd_scene load_steps=34 format=3 uid="uid://cdfxwobmc2ra3"]
 
 [ext_resource type="Texture2D" uid="uid://bkyqe8hvwqmqf" path="res://assets/maps/salon.svg" id="1_rgtto"]
 [ext_resource type="PackedScene" uid="uid://draxvr2x27q23" path="res://scene/player.tscn" id="2_wpp1k"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://by1gcqajv7q35" path="res://assets/props/ilo_central.svg" id="14_4m74h"]
 [ext_resource type="Texture2D" uid="uid://yugoo3gt1png" path="res://assets/props/oven.svg" id="14_amuei"]
 [ext_resource type="Texture2D" uid="uid://b5a6idbmy1owx" path="res://assets/props/bad_coffee.svg" id="14_yqoch"]
+[ext_resource type="Texture2D" uid="uid://jxnyngj613s" path="res://assets/character/dead.svg" id="19_d6soc"]
+[ext_resource type="Texture2D" uid="uid://b3tpjokfnnjo5" path="res://assets/character/ghost.svg" id="21_uhta6"]
 [ext_resource type="Texture2D" uid="uid://u1f0y4smdmxx" path="res://assets/props/eau_lavabo.svg" id="22_pa0f6"]
 [ext_resource type="Texture2D" uid="uid://tgo1awswf7st" path="res://assets/props/poubelle.svg" id="23_lfekj"]
 
@@ -171,9 +173,21 @@ position = Vector2(487.11, 479.499)
 scale = Vector2(0.131086, 0.131086)
 texture = ExtResource("23_lfekj")
 
+[node name="Dead" type="Sprite2D" parent="Cuisine"]
+visible = false
+position = Vector2(13.2772, 57.5343)
+scale = Vector2(0.521733, 0.521733)
+texture = ExtResource("19_d6soc")
+
 [node name="couloir" type="Sprite2D" parent="."]
 position = Vector2(3885, -43)
 texture = ExtResource("13_bachi")
+
+[node name="Ghost" type="Sprite2D" parent="couloir"]
+visible = false
+position = Vector2(-601, 27)
+scale = Vector2(0.621715, 0.621715)
+texture = ExtResource("21_uhta6")
 
 [node name="Player" parent="." node_paths=PackedStringArray("gamemanager_script") instance=ExtResource("2_wpp1k")]
 gamemanager_script = NodePath("../GameManager")

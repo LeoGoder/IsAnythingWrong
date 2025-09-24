@@ -78,6 +78,9 @@ func anomalies_on_cuisine():
 	if item_manipulate.name == "Poubelle" && poubelle_rotation == 0:
 		poubelle_rotation = deg_to_rad(2)
 		number_anomalies += 1
+	if item_manipulate.name == "Dead" && item_manipulate.visible == false:
+		item_manipulate.visible = true
+		number_anomalies += 1
 	
 
 func create_anomalies():
@@ -147,6 +150,10 @@ func _on_cuisne_pressed() -> void:
 		elif cuisine_item_manipulate[i].name == "Poubelle" && poubelle_rotation != 0:
 			poubelle_rotation = deg_to_rad(0)
 			cuisine_item_manipulate[i].rotation = deg_to_rad(0)
+			number_anomalies -= 1
+			break
+		elif cuisine_item_manipulate[i].name == "Dead" && cuisine_item_manipulate[i].visible == true:
+			cuisine_item_manipulate[i].visible = false
 			number_anomalies -= 1
 			break
 	block_view.visible = true
