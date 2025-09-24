@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="184.66612mm"
+   height="163.95607mm"
+   viewBox="0 0 184.66612 163.95607"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="assets.svg"
+   inkscape:version="1.4.2 (ebf0e94, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2"
+     inkscape:cx="4799"
+     inkscape:cy="312.5"
+     inkscape:window-width="3440"
+     inkscape:window-height="1371"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="-4.7034859e-14"
+       width="184.66612"
+       height="163.95605"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="salon"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1146.4979,-20.443283)">
+    <rect
+       style="fill:#dadada;fill-opacity:1;stroke:none;stroke-width:1.47142;stroke-opacity:1"
+       id="rect16-6"
+       width="142.21355"
+       height="33.734386"
+       x="1183.8002"
+       y="49.084423"
+       inkscape:export-filename="/home/azazel/godot_proj/anomalies/assets/props/meuble.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#dadada;fill-opacity:1;stroke:none;stroke-width:0.765624;stroke-opacity:1"
+       id="rect16-6-1"
+       width="38.735626"
+       height="33.531956"
+       x="1146.7994"
+       y="150.86737" />
+    <rect
+       style="fill:#ffc294;fill-opacity:1;stroke:none;stroke-width:1.05752;stroke-opacity:1"
+       id="rect14-3"
+       width="184.66611"
+       height="38.048103"
+       x="1146.4978"
+       y="20.443281"
+       ry="0"
+       inkscape:export-filename="/home/azazel/godot_proj/anomalies/assets/props/ilo_central.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#ffc294;fill-opacity:1;stroke:none;stroke-width:0.867032;stroke-opacity:1"
+       id="rect14-3-2"
+       width="106.63309"
+       height="44.291901"
+       x="-166.03868"
+       y="1146.3312"
+       ry="0"
+       inkscape:export-filename="/home/azazel/godot_proj/anomalies/assets/props/ilo_central.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="matrix(-0.00282992,-0.999996,0.99999875,-0.00157825,0,0)" />
+    <rect
+       style="fill:#ff9545;fill-opacity:1;stroke:none;stroke-width:1.02333;stroke-opacity:1"
+       id="rect15-4"
+       width="140.37863"
+       height="3.4395792"
+       x="1190.7853"
+       y="58.491386" />
+    <rect
+       style="fill:#ff9545;fill-opacity:1;stroke:none;stroke-width:0.574815;stroke-opacity:1"
+       id="rect15-1"
+       width="44.29179"
+       height="3.4395792"
+       x="1146.7997"
+       y="164.19377" />
+  </g>
+</svg>

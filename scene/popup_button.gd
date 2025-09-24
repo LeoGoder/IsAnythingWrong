@@ -1,18 +1,12 @@
 extends Button
 
-@export var salon: Button
-@export var cuisine: Button
-@export var background: ColorRect
+@export var node: Control
 
 func _on_pressed() -> void:
-	if salon.visible == false:
-		salon.visible = true
-		cuisine.visible = true
-		background.visible = true
-	elif salon.visible == true:
-		salon.visible = false
-		cuisine.visible = false
-		background.visible = false
+	if node.visible == false:
+		node.visible = true
+	elif node.visible == true:
+		node.visible = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cdfxwobmc2ra3"]
+[gd_scene load_steps=31 format=3 uid="uid://cdfxwobmc2ra3"]
 
 [ext_resource type="Texture2D" uid="uid://bkyqe8hvwqmqf" path="res://assets/maps/salon.svg" id="1_rgtto"]
 [ext_resource type="PackedScene" uid="uid://draxvr2x27q23" path="res://scene/player.tscn" id="2_wpp1k"]
@@ -16,7 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://cjnm2p5fi2y2a" path="res://assets/maps/cuisine.svg" id="11_gmpll"]
 [ext_resource type="Texture2D" uid="uid://bmt23i1m20up5" path="res://assets/maps/couloir.svg" id="13_bachi"]
 [ext_resource type="AudioStream" uid="uid://dlcuiuk5qhn1w" path="res://assets/sfx/762652__beckmen__vhs-c-camera-noise.wav" id="13_l8r8p"]
+[ext_resource type="Texture2D" uid="uid://dehjndcdq5rng" path="res://assets/props/meuble.svg" id="13_ui0ov"]
+[ext_resource type="Texture2D" uid="uid://c7grpk4274c5g" path="res://assets/props/lavabo.svg" id="14_3fel5"]
 [ext_resource type="Texture2D" uid="uid://by1gcqajv7q35" path="res://assets/props/ilo_central.svg" id="14_4m74h"]
+[ext_resource type="Texture2D" uid="uid://yugoo3gt1png" path="res://assets/props/oven.svg" id="14_amuei"]
+[ext_resource type="Texture2D" uid="uid://b5a6idbmy1owx" path="res://assets/props/bad_coffee.svg" id="14_yqoch"]
+[ext_resource type="Texture2D" uid="uid://u1f0y4smdmxx" path="res://assets/props/eau_lavabo.svg" id="22_pa0f6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44fbv"]
 atlas = ExtResource("9_v66k7")
@@ -40,6 +45,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_amuei"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yqoch"]
+gradient = SubResource("Gradient_amuei")
+fill = 1
+fill_from = Vector2(0.486239, 0.495413)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ui0ov"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -52,14 +65,17 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [node name="map" type="Node2D"]
 position = Vector2(12, -1)
 
-[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("salon", "report_button", "checking", "check_text", "books")]
+[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("salon", "cuisine", "couloir", "report_button", "checking", "check_text", "books", "popup_report")]
 visible = false
 script = ExtResource("4_nf54y")
 salon = NodePath("../salon")
+cuisine = NodePath("../Cuisine")
+couloir = NodePath("../couloir")
 report_button = NodePath("../CanvasLayer/Button")
 checking = NodePath("../Checking")
 check_text = NodePath("../CanvasLayer/Checking")
 books = NodePath("../salon/Books")
+popup_report = NodePath("../CanvasLayer/Button/Control")
 
 [node name="salon" type="Sprite2D" parent="."]
 texture = ExtResource("1_rgtto")
@@ -113,6 +129,40 @@ position = Vector2(11.0643, 102.898)
 scale = Vector2(0.717008, 0.717008)
 texture = ExtResource("14_4m74h")
 
+[node name="Meuble" type="Sprite2D" parent="Cuisine"]
+position = Vector2(-183.668, -96.2596)
+texture = ExtResource("13_ui0ov")
+
+[node name="Lavabo" type="Sprite2D" parent="Cuisine"]
+position = Vector2(-248.947, -361.803)
+scale = Vector2(0.403164, 0.403164)
+texture = ExtResource("14_3fel5")
+
+[node name="BadCoffee" type="Sprite2D" parent="Cuisine"]
+position = Vector2(-433.721, 55.3215)
+scale = Vector2(0.146484, 0.146484)
+texture = ExtResource("14_yqoch")
+
+[node name="Oven" type="Sprite2D" parent="Cuisine"]
+position = Vector2(-75.7657, -210.222)
+scale = Vector2(1.0084, 1.0084)
+texture = ExtResource("14_amuei")
+
+[node name="EauLavabo" type="Sprite2D" parent="Cuisine"]
+visible = false
+position = Vector2(-250.053, -365.122)
+scale = Vector2(0.414911, 0.461013)
+texture = ExtResource("22_pa0f6")
+
+[node name="Light_oven" type="PointLight2D" parent="Cuisine"]
+visible = false
+position = Vector2(-74.6841, -206.903)
+scale = Vector2(1.50405, 0.829824)
+color = Color(0.68, 0.351333, 0, 1)
+energy = 11.35
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_yqoch")
+
 [node name="couloir" type="Sprite2D" parent="."]
 position = Vector2(3885, -43)
 texture = ExtResource("13_bachi")
@@ -139,7 +189,7 @@ size_flags_vertical = 8
 theme_override_colors/font_color = Color(1.92523e-06, 0.662728, 0, 1)
 theme_override_font_sizes/font_size = 32
 
-[node name="Button" type="Button" parent="CanvasLayer" node_paths=PackedStringArray("salon", "cuisine", "background")]
+[node name="Button" type="Button" parent="CanvasLayer" node_paths=PackedStringArray("node")]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -150,41 +200,45 @@ theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
 theme_override_styles/focus = SubResource("StyleBoxFlat_ui0ov")
 text = "Report"
 script = ExtResource("6_jp76l")
-salon = NodePath("Salon")
-cuisine = NodePath("Cuisne")
-background = NodePath("ColorRect")
+node = NodePath("Control")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Button"]
+[node name="Control" type="Control" parent="CanvasLayer/Button"]
 visible = false
+anchors_preset = 0
+offset_left = -66.0
+offset_top = -245.0
+offset_right = -51.0
+offset_bottom = -205.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Button/Control"]
 layout_mode = 0
-offset_left = -8.0
-offset_top = 45.0
-offset_right = 60.0
-offset_bottom = 143.0
+offset_left = 54.0
+offset_top = 289.0
+offset_right = 122.0
+offset_bottom = 387.0
 color = Color(0.154876, 0.154876, 0.154876, 1)
 
-[node name="Salon" type="Button" parent="CanvasLayer/Button"]
-visible = false
+[node name="Salon" type="Button" parent="CanvasLayer/Button/Control"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -61.0
-offset_top = 54.0
-offset_right = -10.0
-offset_bottom = 85.0
+offset_left = 48.0
+offset_top = 297.0
+offset_right = 99.0
+offset_bottom = 328.0
 grow_horizontal = 0
 theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
 theme_override_styles/focus = SubResource("StyleBoxFlat_4m74h")
 text = "Salon"
 flat = true
 
-[node name="Cuisne" type="Button" parent="CanvasLayer/Button"]
-visible = false
+[node name="Cuisne" type="Button" parent="CanvasLayer/Button/Control"]
 layout_mode = 0
-offset_top = 103.0
-offset_right = 60.0
-offset_bottom = 134.0
+offset_left = 62.0
+offset_top = 347.0
+offset_right = 122.0
+offset_bottom = 378.0
 theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
 theme_override_styles/focus = SubResource("StyleBoxFlat_bachi")
 text = "Cusine"
@@ -224,8 +278,9 @@ autostart = true
 wait_time = 3.0
 
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
-[connection signal="button_down" from="CanvasLayer/Button/Salon" to="CanvasLayer/Button" method="_on_salon_button_down"]
-[connection signal="pressed" from="CanvasLayer/Button/Salon" to="GameManager" method="_on_salon_pressed"]
+[connection signal="button_down" from="CanvasLayer/Button/Control/Salon" to="CanvasLayer/Button" method="_on_salon_button_down"]
+[connection signal="pressed" from="CanvasLayer/Button/Control/Salon" to="GameManager" method="_on_salon_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button/Control/Cuisne" to="GameManager" method="_on_cuisne_pressed"]
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="Spawn_anomalie" to="GameManager" method="_on_spawn_anomalie_timeout"]
 [connection signal="timeout" from="Checking" to="GameManager" method="_on_checking_timeout"]

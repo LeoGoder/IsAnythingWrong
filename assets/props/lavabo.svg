@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="146.30334mm"
+   height="50.420383mm"
+   viewBox="0 0 146.30334 50.420383"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="assets.svg"
+   inkscape:version="1.4.2 (ebf0e94, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1"
+     inkscape:cx="5619"
+     inkscape:cy="1261"
+     inkscape:window-width="3440"
+     inkscape:window-height="1371"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="146.30334"
+       height="50.420383"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="salon"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1273.6997,-125.44298)">
+    <rect
+       style="fill:#626262;fill-opacity:1;stroke:none;stroke-width:3"
+       id="rect18"
+       width="146.30334"
+       height="45.275459"
+       x="1273.6996"
+       y="130.58789"
+       ry="10.476966" />
+    <rect
+       style="fill:#202020;fill-opacity:1;stroke:none;stroke-width:2.59627"
+       id="rect22"
+       width="136.24916"
+       height="36.411919"
+       x="1278.7267"
+       y="133.89519"
+       ry="8.4258986" />
+    <circle
+       style="fill:#fe0000;fill-opacity:1;stroke:none;stroke-width:1.97355"
+       id="path23"
+       cx="1342.8213"
+       cy="132.0531"
+       r="1.3489383" />
+    <circle
+       style="fill:#4900fe;fill-opacity:1;stroke:none;stroke-width:1.90513"
+       id="circle23"
+       cx="1355.3073"
+       cy="132.00633"
+       r="1.3021662" />
+    <rect
+       style="fill:#939393;fill-opacity:1;stroke:none;stroke-width:3"
+       id="rect23"
+       width="7.4835205"
+       height="7.5770912"
+       x="1345.4481"
+       y="125.44296" />
+    <rect
+       style="fill:#4e4e4e;fill-opacity:1;stroke:none;stroke-width:3"
+       id="rect24"
+       width="5.7062044"
+       height="1.3096207"
+       x="1346.3835"
+       y="126.65903" />
+  </g>
+</svg>
