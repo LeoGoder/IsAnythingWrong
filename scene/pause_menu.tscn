@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1qsr44y84h27"]
+[gd_scene load_steps=6 format=3 uid="uid://c1qsr44y84h27"]
 
 [ext_resource type="Script" uid="uid://c3p6xtyhl6qe3" path="res://scene/pause_menu.gd" id="1_grdc7"]
+[ext_resource type="PackedScene" uid="uid://3vlpvlnle3mg" path="res://scene/settings.tscn" id="2_me6vf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grdc7"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -11,9 +12,10 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq4tv"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[node name="Root" type="CanvasLayer" node_paths=PackedStringArray("confirmation")]
+[node name="Root" type="CanvasLayer" node_paths=PackedStringArray("confirmation", "settings")]
 script = ExtResource("1_grdc7")
 confirmation = NodePath("Confirmation")
+settings = NodePath("Confirmation/CanvasLayer")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = -1
@@ -118,7 +120,11 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Are you sure ?"
 
+[node name="CanvasLayer" parent="Confirmation" instance=ExtResource("2_me6vf")]
+visible = false
+
 [connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Confirmation/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="Confirmation/HBoxContainer/Cancel" to="." method="_on_cancel_pressed"]

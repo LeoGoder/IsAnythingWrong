@@ -2,6 +2,7 @@ extends Control
 
 var speed = 0.1
 @export var camera: Camera2D
+@export var settings: CanvasLayer
 
 func move_camera_with_mouse():
 	var mouse_position = get_global_mouse_position()
@@ -24,3 +25,7 @@ func _on_quit_pressed() -> void:
 
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene/map.tscn")
+
+
+func _on_settings_pressed() -> void:
+	settings.visible = true

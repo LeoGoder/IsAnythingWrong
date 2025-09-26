@@ -1,6 +1,24 @@
-[gd_scene format=3 uid="uid://3vlpvlnle3mg"]
+[gd_scene load_steps=3 format=3 uid="uid://3vlpvlnle3mg"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[ext_resource type="Script" uid="uid://bfcm4tcj6sbob" path="res://scripts/settings.gd" id="1_likc5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_likc5"]
+bg_color = Color(0.901961, 0.454902, 0.317647, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+
+[node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("soundSlider", "fullscreenButton", "resolutionOption", "applyButton", "volumeLabel", "canvas")]
+script = ExtResource("1_likc5")
+soundSlider = NodePath("SoundContainer/ChangeValue")
+fullscreenButton = NodePath("ResolutionContainer/CheckBox")
+resolutionOption = NodePath("ResolutionContainer/HBoxContainer/OptionButton")
+applyButton = NodePath("Apply")
+volumeLabel = NodePath("SoundContainer/HBoxContainer/Value")
+canvas = NodePath(".")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = -1
@@ -17,3 +35,74 @@ grow_vertical = 2
 scale = Vector2(15.6749, 8.70398)
 size_flags_horizontal = 4
 color = Color(0.169245, 0.169245, 0.169245, 1)
+
+[node name="Sound" type="Label" parent="."]
+offset_left = 664.0
+offset_top = 338.0
+offset_right = 713.0
+offset_bottom = 361.0
+text = "Sound"
+
+[node name="Screen" type="Label" parent="."]
+offset_left = 1196.0
+offset_top = 338.0
+offset_right = 1249.0
+offset_bottom = 361.0
+text = "Screen"
+
+[node name="SoundContainer" type="VBoxContainer" parent="."]
+offset_left = 664.0
+offset_top = 375.0
+offset_right = 704.0
+offset_bottom = 415.0
+
+[node name="ChangeValue" type="HSlider" parent="SoundContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxFlat_likc5")
+max_value = 1.0
+step = 0.001
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SoundContainer"]
+layout_mode = 2
+
+[node name="Value" type="Label" parent="SoundContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="ResolutionContainer" type="VBoxContainer" parent="."]
+offset_left = 1055.0
+offset_top = 367.0
+offset_right = 1256.0
+offset_bottom = 407.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResolutionContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ResolutionContainer/HBoxContainer"]
+layout_mode = 2
+text = "Resolution"
+
+[node name="OptionButton" type="OptionButton" parent="ResolutionContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="ResolutionContainer"]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="Apply" type="Button" parent="."]
+offset_left = 1198.0
+offset_top = 625.0
+offset_right = 1250.0
+offset_bottom = 656.0
+text = "Apply"
+
+[node name="Return" type="Button" parent="."]
+offset_left = 657.0
+offset_top = 628.0
+offset_right = 718.0
+offset_bottom = 659.0
+text = "Return"
+
+[connection signal="pressed" from="Apply" to="." method="_on_apply_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

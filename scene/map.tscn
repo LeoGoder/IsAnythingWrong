@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cdfxwobmc2ra3"]
+[gd_scene load_steps=37 format=3 uid="uid://cdfxwobmc2ra3"]
 
 [ext_resource type="Texture2D" uid="uid://bkyqe8hvwqmqf" path="res://assets/maps/salon.svg" id="1_rgtto"]
 [ext_resource type="PackedScene" uid="uid://draxvr2x27q23" path="res://scene/player.tscn" id="2_wpp1k"]
@@ -24,7 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://jxnyngj613s" path="res://assets/character/dead.svg" id="19_d6soc"]
 [ext_resource type="Texture2D" uid="uid://b3tpjokfnnjo5" path="res://assets/character/ghost.svg" id="21_uhta6"]
 [ext_resource type="Texture2D" uid="uid://u1f0y4smdmxx" path="res://assets/props/eau_lavabo.svg" id="22_pa0f6"]
+[ext_resource type="Texture2D" uid="uid://w8jr2aj1fwlc" path="res://assets/props/void.svg" id="23_d60jh"]
 [ext_resource type="Texture2D" uid="uid://tgo1awswf7st" path="res://assets/props/poubelle.svg" id="23_lfekj"]
+[ext_resource type="Texture2D" uid="uid://d2dgerknagog5" path="res://assets/props/pile_carton.svg" id="26_ewrs0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44fbv"]
 atlas = ExtResource("9_v66k7")
@@ -65,12 +67,15 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bachi"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d60jh"]
+
 [node name="map" type="Node2D"]
 position = Vector2(12, -1)
 
-[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("salon", "cuisine", "couloir", "report_button", "checking", "check_text", "books", "popup_report", "poubelle", "the_player")]
+[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("the_void", "salon", "cuisine", "couloir", "report_button", "checking", "check_text", "books", "popup_report", "poubelle", "the_player")]
 visible = false
 script = ExtResource("4_nf54y")
+the_void = NodePath("../couloir/Void")
 salon = NodePath("../salon")
 cuisine = NodePath("../Cuisine")
 couloir = NodePath("../couloir")
@@ -185,9 +190,22 @@ texture = ExtResource("13_bachi")
 
 [node name="Ghost" type="Sprite2D" parent="couloir"]
 visible = false
-position = Vector2(-601, 27)
+show_behind_parent = true
+position = Vector2(-115, -120)
+rotation = 0.635974
 scale = Vector2(0.621715, 0.621715)
 texture = ExtResource("21_uhta6")
+
+[node name="PileCarton" type="Sprite2D" parent="couloir"]
+position = Vector2(296, -12)
+scale = Vector2(0.594156, 0.594156)
+texture = ExtResource("26_ewrs0")
+
+[node name="Void" type="Sprite2D" parent="couloir"]
+visible = false
+position = Vector2(-37.6251, -9.62509)
+scale = Vector2(0.0196265, 0.0196265)
+texture = ExtResource("23_d60jh")
 
 [node name="Player" parent="." node_paths=PackedStringArray("gamemanager_script") instance=ExtResource("2_wpp1k")]
 gamemanager_script = NodePath("../GameManager")
@@ -225,7 +243,6 @@ script = ExtResource("6_jp76l")
 node = NodePath("Control")
 
 [node name="Control" type="Control" parent="CanvasLayer/Button"]
-visible = false
 anchors_preset = 0
 offset_left = -66.0
 offset_top = -245.0
@@ -237,7 +254,7 @@ layout_mode = 0
 offset_left = 54.0
 offset_top = 289.0
 offset_right = 122.0
-offset_bottom = 387.0
+offset_bottom = 431.0
 color = Color(0.154876, 0.154876, 0.154876, 1)
 
 [node name="Salon" type="Button" parent="CanvasLayer/Button/Control"]
@@ -264,6 +281,17 @@ offset_bottom = 378.0
 theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
 theme_override_styles/focus = SubResource("StyleBoxFlat_bachi")
 text = "Cusine"
+flat = true
+
+[node name="Couloir" type="Button" parent="CanvasLayer/Button/Control"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 386.0
+offset_right = 120.0
+offset_bottom = 417.0
+theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
+theme_override_styles/focus = SubResource("StyleBoxTexture_d60jh")
+text = "Couloir"
 flat = true
 
 [node name="Checking" type="Label" parent="CanvasLayer"]
@@ -303,6 +331,7 @@ wait_time = 3.0
 [connection signal="button_down" from="CanvasLayer/Button/Control/Salon" to="CanvasLayer/Button" method="_on_salon_button_down"]
 [connection signal="pressed" from="CanvasLayer/Button/Control/Salon" to="GameManager" method="_on_salon_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button/Control/Cuisne" to="GameManager" method="_on_cuisne_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button/Control/Couloir" to="GameManager" method="_on_couloir_pressed"]
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="Spawn_anomalie" to="GameManager" method="_on_spawn_anomalie_timeout"]
 [connection signal="timeout" from="Checking" to="GameManager" method="_on_checking_timeout"]

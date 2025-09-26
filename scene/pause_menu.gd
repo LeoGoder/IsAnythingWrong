@@ -4,6 +4,7 @@ extends CanvasLayer
 @export var time: Timer
 @export var player_script: Node2D
 @export var confirmation: Control
+@export var settings: CanvasLayer
 var _player = player.new()
 
 
@@ -30,3 +31,7 @@ func _on_confirm_pressed() -> void:
 
 func _on_cancel_pressed() -> void:
 	confirmation.visible = false
+
+
+func _on_settings_pressed() -> void:
+	settings.visible = true

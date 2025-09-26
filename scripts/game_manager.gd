@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name GameManager 
+
 var hour_unit = 0
 var hour_ten = 0
 var minute_unit = 0
@@ -13,6 +15,8 @@ var couloir_item_manipulate = []
 var number_anomalies = 0
 var index_of_anomalies = 0
 var anomalies_can_spawn = true
+var void_scale = Vector2(0.0, 0.0)
+@export var the_void: Sprite2D
 @onready var time = $"../CanvasLayer/Label"
 @onready var timer = $"../Timer"
 @export var salon: Sprite2D
@@ -82,16 +86,30 @@ func anomalies_on_cuisine():
 		item_manipulate.visible = true
 		number_anomalies += 1
 	
+func anomalies_on_couloir():
+	var rng = RandomNumberGenerator.new()
+	var random_number = rng.randi_range(0, couloir.get_child_count() - 1)
+	var item_manipulate = couloir_item_manipulate[random_number]
+	var item_compare = couloir_based_item[random_number]
+
+	if item_manipulate.name == "Void" && item_manipulate.visible == false && item_manipulate.scale == item_compare.scale:
+		item_manipulate.visible = true
+		number_anomalies += 1
+		void_scale = Vector2(0.0001, 0.0001)
+	if item_manipulate.name == "Ghost" && item_manipulate.visible == false:
+		item_manipulate.visible = true
+		number_anomalies += 1
+
 
 func create_anomalies():
 	var rng = RandomNumberGenerator.new()
-	var random_number = 1 #rng.randi_range(0, 2)
+	var random_number = 2 #rng.randi_range(0, 2)
 	if random_number == 0:
 		anomalies_on_salon()
 	if random_number == 1:
 		anomalies_on_cuisine()
 	if random_number == 2:
-		pass
+		anomalies_on_couloir()
 
 func _on_spawn_anomalie_timeout() -> void:
 	if anomalies_can_spawn == true:
@@ -162,6 +180,25 @@ func _on_cuisne_pressed() -> void:
 	report_button.disabled = true
 	popup_report.visible = false
 
+func _on_couloir_pressed() -> void:
+	for i in range(couloir.get_child_count()):
+		if couloir_item_manipulate[i].name == "Void" && couloir_item_manipulate[i].visible == true:
+			couloir_item_manipulate[i].visible = false
+			couloir_item_manipulate[i].scale = Vector2(0,0)
+			void_scale = Vector2(0,0)
+			number_anomalies -= 1
+			break
+		elif couloir_item_manipulate[i].name == "Ghost" && couloir_item_manipulate[i].visible == true:
+			couloir_item_manipulate[i].visible = false
+			number_anomalies -= 1
+			break
+		
+	block_view.visible = true
+	checking.start()
+	check_text.visible = true
+	report_button.disabled = true
+	popup_report.visible = false
+
 func is_there_too_anomalies():
 	if number_anomalies == 4:
 		time.set("theme_override_colors/font_color", Color(1,0,0))
@@ -180,3 +217,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	is_there_too_anomalies()
 	poubelle.rotation += poubelle_rotation
+	the_void.scale += void_scale
