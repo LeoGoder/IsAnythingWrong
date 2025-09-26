@@ -7,7 +7,6 @@ extends CanvasLayer
 @export var volumeLabel: Label
 @export var canvas: CanvasLayer
 var resolutions = [Vector2(1280, 720), Vector2(1366, 768), Vector2(1600, 900), Vector2(1920, 1080), Vector2(3440, 1440)]
-var value
 
 
 # Called when the node enters the scene tree for the first time.
@@ -40,8 +39,6 @@ func _on_volume_slider_value_changed(value):
 func _on_apply_pressed() -> void:
 	var res_index = resolutionOption.selected
 	var res_to_change = resolutions[res_index]
-	var window = DisplayServer.get_window_at_screen_position(Vector2i.ZERO)
-	var pos_actuelle = DisplayServer.window_get_position()
 	
 	DisplayServer.window_set_size(res_to_change)
 	get_tree().root.size = res_to_change

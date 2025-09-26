@@ -255,40 +255,32 @@ offset_left = 54.0
 offset_top = 289.0
 offset_right = 122.0
 offset_bottom = 431.0
+scale = Vector2(1.16, 0.754992)
 color = Color(0.154876, 0.154876, 0.154876, 1)
 
-[node name="Salon" type="Button" parent="CanvasLayer/Button/Control"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 48.0
-offset_top = 297.0
-offset_right = 99.0
-offset_bottom = 328.0
-grow_horizontal = 0
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Button/Control"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 290.0
+offset_right = 119.0
+offset_bottom = 391.0
+
+[node name="Salon" type="Button" parent="CanvasLayer/Button/Control/VBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
 theme_override_styles/focus = SubResource("StyleBoxFlat_4m74h")
 text = "Salon"
 flat = true
 
-[node name="Cuisne" type="Button" parent="CanvasLayer/Button/Control"]
-layout_mode = 0
-offset_left = 62.0
-offset_top = 347.0
-offset_right = 122.0
-offset_bottom = 378.0
+[node name="Cuisne" type="Button" parent="CanvasLayer/Button/Control/VBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
 theme_override_styles/focus = SubResource("StyleBoxFlat_bachi")
 text = "Cusine"
 flat = true
 
-[node name="Couloir" type="Button" parent="CanvasLayer/Button/Control"]
-layout_mode = 0
-offset_left = 56.0
-offset_top = 386.0
-offset_right = 120.0
-offset_bottom = 417.0
+[node name="Couloir" type="Button" parent="CanvasLayer/Button/Control/VBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
 theme_override_styles/focus = SubResource("StyleBoxTexture_d60jh")
 text = "Couloir"
@@ -328,10 +320,10 @@ autostart = true
 wait_time = 3.0
 
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
-[connection signal="button_down" from="CanvasLayer/Button/Control/Salon" to="CanvasLayer/Button" method="_on_salon_button_down"]
-[connection signal="pressed" from="CanvasLayer/Button/Control/Salon" to="GameManager" method="_on_salon_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button/Control/Cuisne" to="GameManager" method="_on_cuisne_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button/Control/Couloir" to="GameManager" method="_on_couloir_pressed"]
+[connection signal="button_down" from="CanvasLayer/Button/Control/VBoxContainer/Salon" to="CanvasLayer/Button" method="_on_salon_button_down"]
+[connection signal="pressed" from="CanvasLayer/Button/Control/VBoxContainer/Salon" to="GameManager" method="_on_salon_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button/Control/VBoxContainer/Cuisne" to="GameManager" method="_on_cuisne_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button/Control/VBoxContainer/Couloir" to="GameManager" method="_on_couloir_pressed"]
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="Spawn_anomalie" to="GameManager" method="_on_spawn_anomalie_timeout"]
 [connection signal="timeout" from="Checking" to="GameManager" method="_on_checking_timeout"]
