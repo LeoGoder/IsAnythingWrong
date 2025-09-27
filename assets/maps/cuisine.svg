@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="375.43381mm"
+   width="340.06058mm"
    height="318.22748mm"
-   viewBox="0 0 375.43381 318.22748"
+   viewBox="0 0 340.06058 318.22748"
    version="1.1"
    id="svg1"
    sodipodi:docname="assets.svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.5"
-     inkscape:cx="3198"
-     inkscape:cy="1002"
+     inkscape:zoom="0.45772537"
+     inkscape:cx="3707.4633"
+     inkscape:cy="1806.7602"
      inkscape:window-width="3440"
      inkscape:window-height="1371"
      inkscape:window-x="0"
@@ -35,7 +35,7 @@
     <inkscape:page
        x="0"
        y="0"
-       width="375.43381"
+       width="340.06058"
        height="318.22748"
        id="page2"
        margin="0"
@@ -47,7 +47,7 @@
      inkscape:label="salon"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-670.80638,-72.216216)">
+     transform="translate(-686.52629,-72.216216)">
     <rect
        style="fill:#555555;fill-opacity:1;stroke:#434343;stroke-width:0.825639;stroke-dasharray:none;stroke-opacity:1"
        id="rect2-27"
@@ -56,7 +56,7 @@
        x="717.54028"
        y="158.85832"
        ry="0.42278421"
-       inkscape:export-filename="/home/azazel/godot_proj/anomalies/assets/maps/cuisine.svg"
+       inkscape:export-filename="/home/azazel/godot_proj/anomalies/assets/maps/cuisine.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <rect
@@ -973,18 +973,18 @@
        ry="0.42278421" />
     <rect
        style="fill:#555555;fill-opacity:1;stroke:#434343;stroke-width:0.825639;stroke-dasharray:none;stroke-opacity:1"
-       id="rect2-3-1-60-19"
-       width="46.50626"
-       height="8.8784704"
-       x="809.5011"
-       y="299.65552"
-       ry="0.42278421" />
-    <rect
-       style="fill:#555555;fill-opacity:1;stroke:#434343;stroke-width:0.825639;stroke-dasharray:none;stroke-opacity:1"
        id="rect2-36-62-6"
        width="46.50626"
        height="8.8784704"
        x="856.00739"
+       y="299.65552"
+       ry="0.42278421" />
+    <rect
+       style="fill:#555555;fill-opacity:1;stroke:#434343;stroke-width:0.825639;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2-3-1-60-19"
+       width="46.50626"
+       height="8.8784704"
+       x="809.5011"
        y="299.65552"
        ry="0.42278421" />
     <rect
@@ -1404,50 +1404,34 @@
        y="92.297432"
        ry="0" />
     <rect
-       style="fill:#000031;fill-opacity:1;stroke:none;stroke-width:1.11177;stroke-opacity:1"
-       id="rect11"
-       width="26.975372"
-       height="278.90668"
-       x="690.8974"
-       y="92.297432"
-       ry="0" />
-    <rect
-       style="fill:#000031;fill-opacity:1;stroke:none;stroke-width:1.11177;stroke-opacity:1"
-       id="rect11-2"
-       width="26.975372"
-       height="278.90668"
-       x="999.12585"
-       y="92.297432"
-       ry="0" />
-    <rect
-       style="fill:#757575;fill-opacity:1;stroke:none;stroke-width:1.05118;stroke-opacity:1"
+       style="fill:#757575;fill-opacity:1;stroke:none;stroke-width:1.05074;stroke-opacity:1"
        id="rect12"
-       width="339.85968"
+       width="339.57068"
        height="20.080807"
-       x="686.29974"
+       x="686.58881"
        y="72.216225" />
     <rect
-       style="fill:#757575;fill-opacity:1;stroke:none;stroke-width:1.10484;stroke-opacity:1"
+       style="fill:#757575;fill-opacity:1;stroke:none;stroke-width:1.05146;stroke-opacity:1"
        id="rect12-5"
-       width="375.43384"
+       width="340.0289"
        height="20.080807"
-       x="670.8064"
+       x="686.55798"
        y="370.36285" />
     <rect
-       style="fill:#757575;fill-opacity:1;stroke:none;stroke-width:0.986347;stroke-opacity:1"
+       style="fill:#757575;fill-opacity:1;stroke:none;stroke-width:1.19723;stroke-opacity:1"
        id="rect12-3"
-       width="299.22791"
-       height="20.080807"
-       x="-371.44412"
-       y="670.8064"
+       width="290.39462"
+       height="30.485518"
+       x="-379.24716"
+       y="686.52631"
        transform="rotate(-90)" />
     <rect
-       style="fill:#757575;fill-opacity:1;stroke:none;stroke-width:0.986347;stroke-opacity:1"
+       style="fill:#757575;fill-opacity:1;stroke:none;stroke-width:1.15626;stroke-opacity:1"
        id="rect12-3-9"
        width="299.22791"
-       height="20.080807"
+       height="27.59532"
        x="-371.44412"
-       y="1026.1593"
+       y="998.97949"
        transform="rotate(-90)" />
   </g>
 </svg>

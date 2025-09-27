@@ -140,21 +140,21 @@ scale = Vector2(0.717008, 0.717008)
 texture = ExtResource("14_4m74h")
 
 [node name="Meuble" type="Sprite2D" parent="Cuisine"]
-position = Vector2(-183.668, -96.2596)
+position = Vector2(-178.768, -95.1532)
 texture = ExtResource("13_ui0ov")
 
 [node name="Lavabo" type="Sprite2D" parent="Cuisine"]
-position = Vector2(-248.947, -361.803)
+position = Vector2(-242.94, -361.803)
 scale = Vector2(0.403164, 0.403164)
 texture = ExtResource("14_3fel5")
 
 [node name="BadCoffee" type="Sprite2D" parent="Cuisine"]
-position = Vector2(-433.721, 55.3215)
+position = Vector2(-427.714, 55.3215)
 scale = Vector2(0.146484, 0.146484)
 texture = ExtResource("14_yqoch")
 
 [node name="Oven" type="Sprite2D" parent="Cuisine"]
-position = Vector2(-75.7657, -210.222)
+position = Vector2(-69.7588, -210.222)
 scale = Vector2(1.0084, 1.0084)
 texture = ExtResource("14_amuei")
 
