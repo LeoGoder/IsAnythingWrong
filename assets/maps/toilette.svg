@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="216.92087mm"
+   width="191.40834mm"
    height="300.70911mm"
-   viewBox="0 0 216.92087 300.70911"
+   viewBox="0 0 191.40834 300.70911"
    version="1.1"
    id="svg1"
    sodipodi:docname="assets.svg"
@@ -24,8 +24,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.71558146"
-     inkscape:cx="5128.6963"
-     inkscape:cy="2773.9679"
+     inkscape:cx="5974.1626"
+     inkscape:cy="2902.5347"
      inkscape:window-width="3440"
      inkscape:window-height="1371"
      inkscape:window-x="0"
@@ -35,7 +35,7 @@
     <inkscape:page
        x="0"
        y="-4.4822163e-22"
-       width="216.92087"
+       width="191.40834"
        height="300.70911"
        id="page2"
        margin="0"
@@ -49,17 +49,20 @@
      id="layer1"
      transform="translate(-1345.1799,-596.4293)">
     <rect
-       style="fill:#449952;fill-opacity:1;stroke-width:9.67747"
+       style="fill:#449952;fill-opacity:1;stroke-width:9.03148"
        id="rect11"
-       width="197.69789"
+       width="172.18518"
        height="66.551712"
        x="1354.7914"
        y="606.04077"
-       ry="0" />
+       ry="0"
+       inkscape:export-filename="/home/azazel/godot_proj/anomalies/assets/maps/toilette.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
-       style="fill:#6f6f6f;fill-opacity:1;stroke-width:0.900131"
+       style="fill:#6f6f6f;fill-opacity:1;stroke-width:0.840045"
        id="rect36"
-       width="197.69788"
+       width="172.18518"
        height="9.6115246"
        x="1354.7914"
        y="596.42926" />
@@ -69,7 +72,7 @@
        width="300.70911"
        height="9.6115246"
        x="596.42926"
-       y="-1562.1008"
+       y="-1536.5883"
        transform="rotate(90)" />
     <rect
        style="fill:#6f6f6f;fill-opacity:1;stroke-width:1.11014"
@@ -80,16 +83,16 @@
        y="-1354.7914"
        transform="rotate(90)" />
     <rect
-       style="fill:#6f6f6f;fill-opacity:1;stroke-width:0.900131"
+       style="fill:#6f6f6f;fill-opacity:1;stroke-width:0.840045"
        id="rect38"
-       width="197.69788"
+       width="172.18529"
        height="9.6115246"
        x="1354.7914"
        y="887.52686" />
     <rect
-       style="fill:#1e2980;fill-opacity:1;stroke-width:1.8"
+       style="fill:#1e2980;fill-opacity:1;stroke-width:1.67985"
        id="rect39"
-       width="197.69788"
+       width="172.18541"
        height="214.93439"
        x="1354.7913"
        y="672.59247" />
@@ -123,7 +126,7 @@
        id="path77-9" />
     <path
        style="fill:none;fill-opacity:1;stroke:#333e91;stroke-width:1.8;stroke-opacity:1"
-       d="m 1500.272,857.80454 c 0,0 14.9747,-8.87388 29.0251,0"
+       d="m 1491.1853,853.36759 c 0,0 14.9747,-8.87388 29.0251,0"
        id="path77-29" />
     <path
        style="fill:none;fill-opacity:1;stroke:#333e91;stroke-width:1.8;stroke-opacity:1"
@@ -135,7 +138,7 @@
        id="path77-7" />
     <path
        style="fill:none;fill-opacity:1;stroke:#333e91;stroke-width:1.8;stroke-opacity:1"
-       d="m 1354.3317,858.65156 c 0,0 14.9747,-8.87388 29.0251,0"
+       d="m 1360.2476,858.28181 c 0,0 14.9747,-8.87388 29.0251,0"
        id="path77-36" />
     <path
        style="fill:none;fill-opacity:1;stroke:#333e91;stroke-width:1.8;stroke-opacity:1"
@@ -147,15 +150,15 @@
        id="path77-4" />
     <path
        style="fill:none;fill-opacity:1;stroke:#333e91;stroke-width:1.8;stroke-opacity:1"
-       d="m 1509.2836,820.03179 c 0,0 14.9747,-8.87388 29.0251,0"
+       d="m 1487.4686,810.78814 c 0,0 14.9747,-8.87388 29.0251,0"
        id="path77-93" />
     <path
        style="fill:none;fill-opacity:1;stroke:#333e91;stroke-width:1.8;stroke-opacity:1"
-       d="m 1514.9338,757.05156 c 0,0 14.9747,-8.87388 29.0251,0"
+       d="m 1488.3121,754.83308 c 0,0 14.9747,-8.87388 29.0251,0"
        id="path77-54" />
     <path
        style="fill:none;fill-opacity:1;stroke:#333e91;stroke-width:1.8;stroke-opacity:1"
-       d="m 1515.9921,704.92864 c 0,0 14.9747,-8.87388 29.0251,0"
+       d="m 1472.3621,707.51686 c 0,0 14.9747,-8.87388 29.0251,0"
        id="path77-0" />
     <path
        style="fill:none;fill-opacity:1;stroke:#333e91;stroke-width:1.8;stroke-opacity:1"
@@ -193,5 +196,12 @@
        style="fill:none;fill-opacity:1;stroke:#333e91;stroke-width:1.8;stroke-opacity:1"
        d="m 1382.113,691.43489 c 0,0 14.9747,-8.87388 29.0251,0"
        id="path77-67" />
+    <rect
+       style="fill:#743a00;fill-opacity:1;stroke:none;stroke-width:1.93249;stroke-opacity:1"
+       id="rect110"
+       width="57.257519"
+       height="9.6115246"
+       x="1414.313"
+       y="887.52686" />
   </g>
 </svg>

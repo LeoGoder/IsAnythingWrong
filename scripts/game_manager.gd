@@ -9,9 +9,11 @@ var minute_ten = 0
 var salon_based_item = []
 var cuisine_based_item = []
 var couloir_based_item = []
+var toilet_based_item = []
 var salon_item_manipulate = []
 var cuisine_item_manipulate = []
 var couloir_item_manipulate = []
+var toilet_item_manipulate = []
 var number_anomalies = 0
 var index_of_anomalies = 0
 var anomalies_can_spawn = true
@@ -22,6 +24,7 @@ var void_scale = Vector2(0.0, 0.0)
 @export var salon: Sprite2D
 @export var cuisine: Sprite2D
 @export var couloir: Sprite2D
+@export var toilet: Sprite2D
 @export var report_button: Button
 @export var checking: Timer
 @export var check_text: Label
@@ -102,16 +105,28 @@ func anomalies_on_couloir():
 		item_manipulate.visible = true
 		number_anomalies += 1
 
+func anomalies_on_toilet():
+	var rng = RandomNumberGenerator.new()
+	var random_number = rng.randi_range(0, couloir.get_child_count() - 1)
+	var item_manipulate = toilet_item_manipulate[random_number]
+	var item_compare = toilet_based_item[random_number]
+
+	if item_manipulate.name == "???" && item_manipulate.visible == false:
+		item_manipulate.visible = true
+		number_anomalies += 1
+
 
 func create_anomalies():
 	var rng = RandomNumberGenerator.new()
-	var random_number = 2 #rng.randi_range(0, 2)
+	var random_number = 3 #rng.randi_range(0, 2)
 	if random_number == 0:
 		anomalies_on_salon()
 	if random_number == 1:
 		anomalies_on_cuisine()
 	if random_number == 2:
 		anomalies_on_couloir()
+	if random_number == 3:
+		anomalies_on_toilet()
 
 func _on_spawn_anomalie_timeout() -> void:
 	if anomalies_can_spawn == true:
@@ -130,13 +145,24 @@ func object_based_list():
 		for child in couloir.get_children():
 			couloir_based_item.append(child.duplicate())
 			couloir_item_manipulate.append(child)
+	if toilet:
+		for child in toilet.get_children():
+			toilet_based_item.append(child.duplicate())
+			toilet_item_manipulate.append(child)
 
 func _on_checking_timeout() -> void:
 	report_button.disabled = false
 	check_text.visible = false
 	block_view.visible = false
 
-# will check for anomalies in the salon
+func block_view_for_a_while():
+	block_view.visible = true
+	checking.start()
+	check_text.visible = true
+	report_button.disabled = true
+	popup_report.visible = false
+
+# will check for anomalies
 func _on_salon_pressed() -> void:
 	for i in range(salon.get_child_count()):
 		if salon_item_manipulate[i].position != salon_based_item[i].position:
@@ -151,11 +177,7 @@ func _on_salon_pressed() -> void:
 			
 		else:
 			pass
-	block_view.visible = true
-	checking.start()
-	check_text.visible = true
-	report_button.disabled = true
-	popup_report.visible = false
+	block_view_for_a_while()
 
 func _on_cuisne_pressed() -> void:
 	for i in range(cuisine.get_child_count()):
@@ -176,11 +198,7 @@ func _on_cuisne_pressed() -> void:
 			cuisine_item_manipulate[i].visible = false
 			number_anomalies -= 1
 			break
-	block_view.visible = true
-	checking.start()
-	check_text.visible = true
-	report_button.disabled = true
-	popup_report.visible = false
+	block_view_for_a_while()
 
 func _on_couloir_pressed() -> void:
 	for i in range(couloir.get_child_count()):
@@ -195,11 +213,18 @@ func _on_couloir_pressed() -> void:
 			number_anomalies -= 1
 			break
 		
-	block_view.visible = true
-	checking.start()
-	check_text.visible = true
-	report_button.disabled = true
-	popup_report.visible = false
+	block_view_for_a_while()
+
+
+func _on_toilet_pressed() -> void:
+	for i in range(toilet.get_child_count()):
+		if toilet_item_manipulate[i].name == "???" && toilet_item_manipulate[i].visible == true:
+			toilet_item_manipulate[i].visible = false
+			number_anomalies -= 1
+			break
+		else:
+			pass
+	block_view_for_a_while()
 
 func is_there_too_anomalies():
 	if number_anomalies == 4:
