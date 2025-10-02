@@ -41,11 +41,11 @@ func _on_timer_timeout() -> void:
 	if minute_unit >= 10:
 		minute_ten += 1
 		minute_unit = 0
-	if minute_ten >= 5:
+	if minute_ten >= 6:
 		hour_unit += 1
 		hourly_alarme.play()
 		minute_ten = 0
-	if hour_unit >= 6:
+	if hour_unit >= 3:
 		get_tree().change_scene_to_file("res://scene/VictoryScreen.tscn")
 	display_time()
 	
@@ -118,7 +118,7 @@ func anomalies_on_toilet():
 
 func create_anomalies():
 	var rng = RandomNumberGenerator.new()
-	var random_number = 3 #rng.randi_range(0, 2)
+	var random_number = rng.randi_range(0, 3)
 	if random_number == 0:
 		anomalies_on_salon()
 	if random_number == 1:
@@ -231,7 +231,7 @@ func is_there_too_anomalies():
 		time.set("theme_override_colors/font_color", Color(1,0,0))
 		check_text.set("theme_override_colors/font_color", Color(1,0,0))
 		
-	if number_anomalies >= 6:
+	if number_anomalies >= 5:
 		get_tree().change_scene_to_file("res://scene/GameOver.tscn")
 
 # Called when the node enters the scene tree for the first time.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cdfxwobmc2ra3"]
+[gd_scene load_steps=47 format=3 uid="uid://cdfxwobmc2ra3"]
 
 [ext_resource type="Texture2D" uid="uid://bkyqe8hvwqmqf" path="res://assets/maps/salon.svg" id="1_rgtto"]
 [ext_resource type="PackedScene" uid="uid://draxvr2x27q23" path="res://scene/player.tscn" id="2_wpp1k"]
@@ -7,13 +7,14 @@
 [ext_resource type="Script" uid="uid://dirukoc38j2nc" path="res://scripts/game_manager.gd" id="4_nf54y"]
 [ext_resource type="PackedScene" uid="uid://c1qsr44y84h27" path="res://scene/pause_menu.tscn" id="5_4xw1d"]
 [ext_resource type="Texture2D" uid="uid://do2qgfo8aybg4" path="res://assets/props/mousepad.svg" id="5_8vfk2"]
-[ext_resource type="Script" uid="uid://c6fktidibs41x" path="res://scene/popup_button.gd" id="6_jp76l"]
+[ext_resource type="Script" path="res://scene/popup_button.gd" id="6_jp76l"]
 [ext_resource type="Texture2D" uid="uid://8ygoa2sqxge7" path="res://assets/props/keyboard.svg" id="6_v66k7"]
 [ext_resource type="Texture2D" uid="uid://bxv448eg8fnt6" path="res://assets/props/mouse.svg" id="7_44fbv"]
 [ext_resource type="Texture2D" uid="uid://b815jc2kps6yt" path="res://assets/props/carpet.svg" id="8_8vfk2"]
 [ext_resource type="Texture2D" uid="uid://cv5ufqja70j4t" path="res://assets/character/make_you_smile.png" id="9_44fbv"]
 [ext_resource type="Texture2D" uid="uid://bim8m3b1111wf" path="res://assets/props/books.svg" id="9_v66k7"]
 [ext_resource type="Texture2D" uid="uid://cjnm2p5fi2y2a" path="res://assets/maps/cuisine.svg" id="11_gmpll"]
+[ext_resource type="Texture2D" uid="uid://ctp68607db324" path="res://assets/props/bed.png" id="12_ok7wf"]
 [ext_resource type="Texture2D" uid="uid://bmt23i1m20up5" path="res://assets/maps/couloir.svg" id="13_bachi"]
 [ext_resource type="AudioStream" uid="uid://dlcuiuk5qhn1w" path="res://assets/sfx/762652__beckmen__vhs-c-camera-noise.wav" id="13_l8r8p"]
 [ext_resource type="Texture2D" uid="uid://dehjndcdq5rng" path="res://assets/props/meuble.svg" id="13_ui0ov"]
@@ -81,7 +82,6 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="map" type="Node2D"]
-position = Vector2(12, -1)
 
 [node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("the_void", "salon", "cuisine", "couloir", "toilet", "report_button", "checking", "check_text", "hourly_alarme", "books", "popup_report", "poubelle", "the_player")]
 visible = false
@@ -142,9 +142,21 @@ scale = Vector2(0.14196, 0.14196)
 texture = ExtResource("9_44fbv")
 
 [node name="Books" type="AnimatedSprite2D" parent="salon"]
-position = Vector2(-575, 294)
+position = Vector2(-187, 406)
 scale = Vector2(0.28673, 0.28673)
 sprite_frames = SubResource("SpriteFrames_gmpll")
+
+[node name="Placard" type="Sprite2D" parent="salon"]
+texture_filter = 1
+position = Vector2(-117, -341)
+scale = Vector2(8.95312, 8.95312)
+texture = ExtResource("29_6ctjw")
+
+[node name="Bed" type="Sprite2D" parent="salon"]
+texture_filter = 1
+position = Vector2(-456, 297)
+scale = Vector2(12.0781, 12.0781)
+texture = ExtResource("12_ok7wf")
 
 [node name="Cuisine" type="Sprite2D" parent="."]
 position = Vector2(-39, -2178)
@@ -198,7 +210,7 @@ texture = ExtResource("23_lfekj")
 
 [node name="Dead" type="Sprite2D" parent="Cuisine"]
 visible = false
-position = Vector2(13.2772, 57.5343)
+position = Vector2(14.3836, 17.7028)
 scale = Vector2(0.521733, 0.521733)
 texture = ExtResource("19_d6soc")
 
@@ -298,10 +310,10 @@ node = NodePath("Control")
 [node name="Control" type="Control" parent="CanvasLayer/Button"]
 visible = false
 anchors_preset = 0
-offset_left = -66.0
-offset_top = -245.0
-offset_right = -51.0
-offset_bottom = -205.0
+offset_left = -73.0
+offset_top = -247.0
+offset_right = -58.0
+offset_bottom = -207.0
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Button/Control"]
 layout_mode = 0
@@ -314,30 +326,30 @@ color = Color(0.154876, 0.154876, 0.154876, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Button/Control"]
 layout_mode = 0
-offset_left = 55.0
-offset_top = 290.0
-offset_right = 119.0
-offset_bottom = 391.0
+offset_left = 54.0
+offset_top = 289.0
+offset_right = 134.0
+offset_bottom = 425.0
 
 [node name="Salon" type="Button" parent="CanvasLayer/Button/Control/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
 theme_override_styles/focus = SubResource("StyleBoxFlat_4m74h")
-text = "Salon"
+text = "Bedroom"
 flat = true
 
-[node name="Cuisne" type="Button" parent="CanvasLayer/Button/Control/VBoxContainer"]
+[node name="Kitchen" type="Button" parent="CanvasLayer/Button/Control/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
 theme_override_styles/focus = SubResource("StyleBoxFlat_bachi")
-text = "Cusine"
+text = "Kitchen"
 flat = true
 
 [node name="Couloir" type="Button" parent="CanvasLayer/Button/Control/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
 theme_override_styles/focus = SubResource("StyleBoxTexture_d60jh")
-text = "Couloir"
+text = "hallway"
 flat = true
 
 [node name="Toilet" type="Button" parent="CanvasLayer/Button/Control/VBoxContainer"]
@@ -371,10 +383,11 @@ stream = ExtResource("28_xkx26")
 wait_time = 3.0
 autostart = true
 
-[node name="Root" parent="." node_paths=PackedStringArray("time", "player_script") instance=ExtResource("5_4xw1d")]
+[node name="Root" parent="." node_paths=PackedStringArray("time", "player_script", "gamemanager_script") instance=ExtResource("5_4xw1d")]
 visible = false
 time = NodePath("../Timer")
 player_script = NodePath("../Player")
+gamemanager_script = NodePath("../GameManager")
 
 [node name="Spawn_anomalie" type="Timer" parent="."]
 wait_time = 5.0
@@ -383,16 +396,10 @@ autostart = true
 [node name="Checking" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="Placard" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-117, -341)
-scale = Vector2(8.95312, 8.95312)
-texture = ExtResource("29_6ctjw")
-
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
 [connection signal="button_down" from="CanvasLayer/Button/Control/VBoxContainer/Salon" to="CanvasLayer/Button" method="_on_salon_button_down"]
 [connection signal="pressed" from="CanvasLayer/Button/Control/VBoxContainer/Salon" to="GameManager" method="_on_salon_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button/Control/VBoxContainer/Cuisne" to="GameManager" method="_on_cuisne_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button/Control/VBoxContainer/Kitchen" to="GameManager" method="_on_cuisne_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button/Control/VBoxContainer/Couloir" to="GameManager" method="_on_couloir_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button/Control/VBoxContainer/Toilet" to="GameManager" method="_on_toilet_pressed"]
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]

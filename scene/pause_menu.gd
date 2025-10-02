@@ -5,7 +5,7 @@ extends CanvasLayer
 @export var player_script: Node2D
 @export var confirmation: Control
 @export var settings: CanvasLayer
-var _player = player.new()
+@export var gamemanager_script: Node2D
 
 
 func _on_quit_pressed() -> void:
@@ -16,6 +16,7 @@ func _on_resume_pressed() -> void:
 		self.visible = false
 		time.paused = false
 		player_script.can_move = true
+		gamemanager_script.anomalies_can_spawn = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
