@@ -1,6 +1,15 @@
-[gd_scene format=3 uid="uid://cthtv8yl5rvk8"]
+[gd_scene load_steps=4 format=3 uid="uid://cthtv8yl5rvk8"]
+
+[ext_resource type="Script" uid="uid://cary5n5s3wy3u" path="res://scripts/victory_screen.gd" id="1_8dh4u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dh4u"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctt2w"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Root" type="Node2D"]
+script = ExtResource("1_8dh4u")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -13,5 +22,27 @@ anchor_bottom = 0.515972
 offset_bottom = 3.05176e-05
 grow_horizontal = 2
 grow_vertical = 2
-text = "Victoire"
+text = "Victory"
 metadata/_edit_use_anchors_ = true
+
+[node name="back" type="Button" parent="CanvasLayer"]
+offset_top = 1045.0
+offset_right = 8.0
+offset_bottom = 1053.0
+theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_8dh4u")
+text = "Back to menu"
+flat = true
+
+[node name="newGame" type="Button" parent="CanvasLayer"]
+offset_left = 1829.0
+offset_top = 1045.0
+offset_right = 1919.0
+offset_bottom = 1076.0
+theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_ctt2w")
+text = "New game"
+flat = true
+
+[connection signal="pressed" from="CanvasLayer/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/newGame" to="." method="_on_new_game_pressed"]

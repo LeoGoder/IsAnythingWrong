@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1qsr44y84h27"]
+[gd_scene load_steps=8 format=3 uid="uid://c1qsr44y84h27"]
 
 [ext_resource type="Script" uid="uid://c3p6xtyhl6qe3" path="res://scene/pause_menu.gd" id="1_grdc7"]
 [ext_resource type="PackedScene" uid="uid://3vlpvlnle3mg" path="res://scene/settings.tscn" id="2_me6vf"]
@@ -10,6 +10,12 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq4tv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ug2vv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbwph"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Root" type="CanvasLayer" node_paths=PackedStringArray("confirmation", "settings")]
@@ -97,12 +103,18 @@ grow_vertical = 0
 
 [node name="Confirm" type="Button" parent="Confirmation/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_ug2vv")
 text = "Yes"
+flat = true
 
 [node name="Cancel" type="Button" parent="Confirmation/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
 theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxFlat_qbwph")
 text = "Cancel"
+flat = true
 
 [node name="Label" type="Label" parent="Confirmation"]
 layout_mode = 1

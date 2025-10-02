@@ -2,7 +2,7 @@ extends Node2D
 
 class_name player
 
-var cam_list_position = [Vector2(0, 0), Vector2(-39, -2178), Vector2(3885.0, -43.0)]
+var cam_list_position = [Vector2(0, 0), Vector2(-39, -2178), Vector2(3885.0, -43.0), Vector2(2422.0, -2033.0)]
 var cam_index = 0
 var can_move = true
 @onready var cam = $Camera2D
@@ -15,7 +15,7 @@ var can_move = true
 func next_camera():
 	if Input.is_action_just_pressed("next") and can_move == true:
 		cam_index += 1
-		if cam_index >= 3: 
+		if cam_index >= 4: 
 			cam_index = 0
 			cam.position = cam_list_position[cam_index]
 		else:
@@ -23,7 +23,7 @@ func next_camera():
 	if Input.is_action_just_pressed("previous") and can_move == true:
 		cam_index -= 1
 		if cam_index < 0: 
-			cam_index = 2
+			cam_index = 3
 			cam.position = cam_list_position[cam_index]
 		else:
 			cam.position = cam_list_position[cam_index]

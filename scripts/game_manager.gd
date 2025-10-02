@@ -25,6 +25,7 @@ var void_scale = Vector2(0.0, 0.0)
 @export var report_button: Button
 @export var checking: Timer
 @export var check_text: Label
+@export var hourly_alarme: AudioStreamPlayer
 @export var books: AnimatedSprite2D
 @export var popup_report: Control
 @export var poubelle: Sprite2D
@@ -39,6 +40,7 @@ func _on_timer_timeout() -> void:
 		minute_unit = 0
 	if minute_ten >= 5:
 		hour_unit += 1
+		hourly_alarme.play()
 		minute_ten = 0
 	if hour_unit >= 6:
 		get_tree().change_scene_to_file("res://scene/VictoryScreen.tscn")

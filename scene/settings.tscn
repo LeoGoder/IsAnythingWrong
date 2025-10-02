@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://3vlpvlnle3mg"]
+[gd_scene load_steps=5 format=3 uid="uid://3vlpvlnle3mg"]
 
 [ext_resource type="Script" uid="uid://bfcm4tcj6sbob" path="res://scripts/settings.gd" id="1_likc5"]
 
@@ -10,6 +10,12 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 expand_margin_top = 3.0
 expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ok4lx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhf66"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("soundSlider", "fullscreenButton", "resolutionOption", "applyButton", "volumeLabel", "canvas")]
 script = ExtResource("1_likc5")
@@ -95,14 +101,20 @@ offset_left = 1198.0
 offset_top = 625.0
 offset_right = 1250.0
 offset_bottom = 656.0
+theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_ok4lx")
 text = "Apply"
+flat = true
 
 [node name="Return" type="Button" parent="."]
 offset_left = 657.0
 offset_top = 628.0
 offset_right = 718.0
 offset_bottom = 659.0
+theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_uhf66")
 text = "Return"
+flat = true
 
 [connection signal="pressed" from="Apply" to="." method="_on_apply_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

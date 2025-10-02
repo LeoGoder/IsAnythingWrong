@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cdfxwobmc2ra3"]
+[gd_scene load_steps=42 format=3 uid="uid://cdfxwobmc2ra3"]
 
 [ext_resource type="Texture2D" uid="uid://bkyqe8hvwqmqf" path="res://assets/maps/salon.svg" id="1_rgtto"]
 [ext_resource type="PackedScene" uid="uid://draxvr2x27q23" path="res://scene/player.tscn" id="2_wpp1k"]
@@ -20,13 +20,18 @@
 [ext_resource type="Texture2D" uid="uid://c7grpk4274c5g" path="res://assets/props/lavabo.svg" id="14_3fel5"]
 [ext_resource type="Texture2D" uid="uid://by1gcqajv7q35" path="res://assets/props/ilo_central.svg" id="14_4m74h"]
 [ext_resource type="Texture2D" uid="uid://yugoo3gt1png" path="res://assets/props/oven.svg" id="14_amuei"]
-[ext_resource type="Texture2D" uid="uid://b5a6idbmy1owx" path="res://assets/props/bad_coffee.svg" id="14_yqoch"]
+[ext_resource type="Texture2D" uid="uid://bs22obfpsyu5a" path="res://assets/props/bad_coffee.png" id="15_i8ww0"]
 [ext_resource type="Texture2D" uid="uid://jxnyngj613s" path="res://assets/character/dead.svg" id="19_d6soc"]
 [ext_resource type="Texture2D" uid="uid://b3tpjokfnnjo5" path="res://assets/character/ghost.svg" id="21_uhta6"]
 [ext_resource type="Texture2D" uid="uid://u1f0y4smdmxx" path="res://assets/props/eau_lavabo.svg" id="22_pa0f6"]
 [ext_resource type="Texture2D" uid="uid://w8jr2aj1fwlc" path="res://assets/props/void.svg" id="23_d60jh"]
 [ext_resource type="Texture2D" uid="uid://tgo1awswf7st" path="res://assets/props/poubelle.svg" id="23_lfekj"]
 [ext_resource type="Texture2D" uid="uid://d2dgerknagog5" path="res://assets/props/pile_carton.svg" id="26_ewrs0"]
+[ext_resource type="Texture2D" uid="uid://cti8dkcmhpnj2" path="res://assets/props/verreEau.png" id="28_i8ww0"]
+[ext_resource type="AudioStream" uid="uid://bdw45rju5srtj" path="res://assets/sfx/805324__designerschoice__clockchim-samsung-galaxy-smartphone-cu_grandfather-clock-half-hour-chimes_nicholas-judy_tdc.wav" id="28_xkx26"]
+[ext_resource type="Texture2D" uid="uid://bw8d4bhi6jibq" path="res://assets/props/placard.png" id="29_6ctjw"]
+[ext_resource type="Texture2D" uid="uid://cahb0erdf4fq5" path="res://assets/props/toilette.png" id="31_23w2h"]
+[ext_resource type="Texture2D" uid="uid://xjs53ss6622h" path="res://assets/maps/toilette.svg" id="31_h4w2u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44fbv"]
 atlas = ExtResource("9_v66k7")
@@ -72,7 +77,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [node name="map" type="Node2D"]
 position = Vector2(12, -1)
 
-[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("the_void", "salon", "cuisine", "couloir", "report_button", "checking", "check_text", "books", "popup_report", "poubelle", "the_player")]
+[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("the_void", "salon", "cuisine", "couloir", "report_button", "checking", "check_text", "hourly_alarme", "books", "popup_report", "poubelle", "the_player")]
 visible = false
 script = ExtResource("4_nf54y")
 the_void = NodePath("../couloir/Void")
@@ -82,6 +87,7 @@ couloir = NodePath("../couloir")
 report_button = NodePath("../CanvasLayer/Button")
 checking = NodePath("../Checking")
 check_text = NodePath("../CanvasLayer/Checking")
+hourly_alarme = NodePath("../CanvasLayer/Hourly_alarm")
 books = NodePath("../salon/Books")
 popup_report = NodePath("../CanvasLayer/Button/Control")
 poubelle = NodePath("../Cuisine/Poubelle")
@@ -95,20 +101,24 @@ position = Vector2(-429, -178)
 texture = ExtResource("3_h0nt1")
 
 [node name="Screen" type="Sprite2D" parent="salon"]
-position = Vector2(-432, -359)
+position = Vector2(-430, -373.328)
+scale = Vector2(0.75049, 0.75049)
 texture = ExtResource("4_0bc6k")
 
 [node name="Mousepad" type="Sprite2D" parent="salon"]
-position = Vector2(-436, -225)
+position = Vector2(-431.649, -266.956)
+scale = Vector2(0.698293, 0.698293)
 texture = ExtResource("5_8vfk2")
 
 [node name="Keyboard" type="Sprite2D" parent="salon"]
 texture_filter = 1
-position = Vector2(-449, -221)
+position = Vector2(-444.649, -266)
+scale = Vector2(0.698293, 0.698293)
 texture = ExtResource("6_v66k7")
 
 [node name="Mouse" type="Sprite2D" parent="salon"]
-position = Vector2(-380, -220)
+position = Vector2(-394, -266)
+scale = Vector2(0.698293, 0.698293)
 texture = ExtResource("7_44fbv")
 
 [node name="Carpet" type="Sprite2D" parent="salon"]
@@ -140,7 +150,7 @@ scale = Vector2(0.717008, 0.717008)
 texture = ExtResource("14_4m74h")
 
 [node name="Meuble" type="Sprite2D" parent="Cuisine"]
-position = Vector2(-178.768, -95.1532)
+position = Vector2(-178.135, -98.4725)
 texture = ExtResource("13_ui0ov")
 
 [node name="Lavabo" type="Sprite2D" parent="Cuisine"]
@@ -149,9 +159,10 @@ scale = Vector2(0.403164, 0.403164)
 texture = ExtResource("14_3fel5")
 
 [node name="BadCoffee" type="Sprite2D" parent="Cuisine"]
-position = Vector2(-427.714, 55.3215)
-scale = Vector2(0.146484, 0.146484)
-texture = ExtResource("14_yqoch")
+texture_filter = 1
+position = Vector2(-431.508, 65.2794)
+scale = Vector2(2.29393, 2.29393)
+texture = ExtResource("15_i8ww0")
 
 [node name="Oven" type="Sprite2D" parent="Cuisine"]
 position = Vector2(-69.7588, -210.222)
@@ -183,6 +194,12 @@ visible = false
 position = Vector2(13.2772, 57.5343)
 scale = Vector2(0.521733, 0.521733)
 texture = ExtResource("19_d6soc")
+
+[node name="VerreEau" type="Sprite2D" parent="Cuisine"]
+texture_filter = 1
+position = Vector2(-428.189, -44.2573)
+scale = Vector2(2.52405, 2.52405)
+texture = ExtResource("28_i8ww0")
 
 [node name="couloir" type="Sprite2D" parent="."]
 position = Vector2(3885, -43)
@@ -243,6 +260,7 @@ script = ExtResource("6_jp76l")
 node = NodePath("Control")
 
 [node name="Control" type="Control" parent="CanvasLayer/Button"]
+visible = false
 anchors_preset = 0
 offset_left = -66.0
 offset_top = -245.0
@@ -303,6 +321,9 @@ text = "Checking..."
 stream = ExtResource("13_l8r8p")
 autoplay = true
 
+[node name="Hourly_alarm" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("28_xkx26")
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
@@ -318,6 +339,22 @@ autostart = true
 
 [node name="Checking" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="Placard" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-117, -341)
+scale = Vector2(8.95312, 8.95312)
+texture = ExtResource("29_6ctjw")
+
+[node name="Toilette" type="Sprite2D" parent="."]
+position = Vector2(2422, -2033)
+texture = ExtResource("31_h4w2u")
+
+[node name="Toilette_moche" type="Sprite2D" parent="Toilette"]
+texture_filter = 1
+position = Vector2(1.99994, -243)
+scale = Vector2(11.0781, 11.0781)
+texture = ExtResource("31_23w2h")
 
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
 [connection signal="button_down" from="CanvasLayer/Button/Control/VBoxContainer/Salon" to="CanvasLayer/Button" method="_on_salon_button_down"]

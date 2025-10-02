@@ -1,6 +1,15 @@
-[gd_scene format=3 uid="uid://dpiqp27hcg7wh"]
+[gd_scene load_steps=4 format=3 uid="uid://dpiqp27hcg7wh"]
+
+[ext_resource type="Script" uid="uid://cgx378amsyngt" path="res://scripts/game_over.gd" id="1_0mfy4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mfy4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbok3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Root" type="Node2D"]
+script = ExtResource("1_0mfy4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -17,3 +26,25 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "GameOver"
+
+[node name="BackToMenu" type="Button" parent="CanvasLayer"]
+offset_top = 1047.0
+offset_right = 117.0
+offset_bottom = 1078.0
+theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_0mfy4")
+text = "Back To Menu"
+flat = true
+
+[node name="newGame" type="Button" parent="CanvasLayer"]
+offset_left = 1825.0
+offset_top = 1047.0
+offset_right = 1918.0
+offset_bottom = 1078.0
+theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_tbok3")
+text = "New Game"
+flat = true
+
+[connection signal="pressed" from="CanvasLayer/BackToMenu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/newGame" to="." method="_on_new_game_pressed"]
