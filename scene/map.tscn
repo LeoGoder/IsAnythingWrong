@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://tgo1awswf7st" path="res://assets/props/poubelle.svg" id="23_lfekj"]
 [ext_resource type="Texture2D" uid="uid://d2dgerknagog5" path="res://assets/props/pile_carton.svg" id="26_ewrs0"]
 [ext_resource type="Texture2D" uid="uid://cxeped8td4l4y" path="res://assets/props/brosseChiotte.png" id="27_oegkd"]
-[ext_resource type="Texture2D" uid="uid://cflw6c0y71o0a" path="res://assets/character/???.svg" id="28_fecvx"]
+[ext_resource type="Texture2D" uid="uid://cflw6c0y71o0a" path="res://assets/character/mystery.svg" id="28_fecvx"]
 [ext_resource type="Texture2D" uid="uid://cti8dkcmhpnj2" path="res://assets/props/verreEau.png" id="28_i8ww0"]
 [ext_resource type="AudioStream" uid="uid://bdw45rju5srtj" path="res://assets/sfx/805324__designerschoice__clockchim-samsung-galaxy-smartphone-cu_grandfather-clock-half-hour-chimes_nicholas-judy_tdc.wav" id="28_xkx26"]
 [ext_resource type="Texture2D" uid="uid://bw8d4bhi6jibq" path="res://assets/props/placard.png" id="29_6ctjw"]
