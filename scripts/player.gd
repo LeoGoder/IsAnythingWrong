@@ -7,10 +7,15 @@ var cam_index = 0
 var can_move = true
 @onready var cam = $Camera2D
 @onready var pause = $"../Root"
+@onready var txt_name = $Camera2D/CanvasLayer/Label
 @onready var console = get_node("/root/map/Root/Console_Window")
 @onready var game_timer = get_node("/root/map/Timer")
 @onready var spawn_timer = get_node("/root/map/Spawn_anomalie")
 @export var gamemanager_script: Node2D
+var position_name = ["Bedroom", "kitchen", "Hallway", "toilet"]
+
+func show_position_name():
+	txt_name.text = position_name[cam_index]
 
 func next_camera():
 	if Input.is_action_just_pressed("next") and can_move == true:
@@ -55,5 +60,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	next_camera()
+	show_position_name()
 	enable_diable_settings()
 	enable_disable_console()

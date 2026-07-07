@@ -45,7 +45,7 @@ func _on_timer_timeout() -> void:
 		hour_unit += 1
 		hourly_alarme.play()
 		minute_ten = 0
-	if hour_unit >= 3:
+	if hour_unit >= 2:
 		get_tree().change_scene_to_file("res://scene/VictoryScreen.tscn")
 	display_time()
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4818b7dbg5ye"]
+[gd_scene format=3 uid="uid://c4818b7dbg5ye"]
 
 [ext_resource type="Texture2D" uid="uid://bkyqe8hvwqmqf" path="res://assets/maps/salon.svg" id="1_3er1b"]
 [ext_resource type="Script" uid="uid://dgrbhl8rekbnc" path="res://scripts/main_menu.gd" id="1_hxu56"]
@@ -15,7 +15,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sepwh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[node name="main_menu" type="Control" node_paths=PackedStringArray("camera", "settings")]
+[node name="main_menu" type="Control" unique_id=1957205926 node_paths=PackedStringArray("camera", "settings")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,11 +26,11 @@ script = ExtResource("1_hxu56")
 camera = NodePath("Camera2D")
 settings = NodePath("CanvasLayer2")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=240391770]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1742439958]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1821648665]
 texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -45,7 +45,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.140447, 0.140447, 0.140447, 0.843137)
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=457725142]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -58,7 +58,7 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 34
 text = "Is There Anything Wrong ?"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=527001611]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -71,7 +71,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="start" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="start" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1378250140]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
 theme_override_styles/focus = SubResource("StyleBoxFlat_2fwvj")
@@ -79,28 +79,28 @@ text = "Start"
 flat = true
 script = ExtResource("2_sepwh")
 
-[node name="settings" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="settings" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1063222932]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
 theme_override_styles/focus = SubResource("StyleBoxFlat_0iwki")
 text = "Settings"
 flat = true
 
-[node name="quit" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="quit" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=937819086]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.901961, 0.454902, 0.317647, 1)
 theme_override_styles/focus = SubResource("StyleBoxFlat_sepwh")
 text = "Quit"
 flat = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=1850940228]
 stream = ExtResource("2_2fwvj")
 autoplay = true
 
-[node name="CanvasLayer2" parent="." instance=ExtResource("3_0iwki")]
+[node name="CanvasLayer2" parent="." unique_id=1151199319 instance=ExtResource("3_0iwki")]
 visible = false
 
-[node name="Salon" type="Sprite2D" parent="."]
+[node name="Salon" type="Sprite2D" parent="." unique_id=755062485]
 position = Vector2(6, -12)
 texture = ExtResource("1_3er1b")
 

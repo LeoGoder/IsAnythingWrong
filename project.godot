@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Is There Anything Wrong ?"
 run/main_scene="uid://c4818b7dbg5ye"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="uid://di8v2rj3hlkut"
 boot_splash/minimum_display_time=1000
